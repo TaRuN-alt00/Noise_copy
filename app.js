@@ -586,6 +586,30 @@ document.addEventListener('DOMContentLoaded', () => {
     handleHeroScrollTransition();
   }
 
+  // =========================================================================
+  // 10. Liquid Ether Fluid Dynamics WebGL Simulation (Hero Card Option 2)
+  // =========================================================================
+  const heroEtherContainer = document.getElementById('hero-liquid-ether');
+  if (heroEtherContainer && typeof LiquidEther === 'function' && typeof THREE !== 'undefined' && !prefersReducedMotion) {
+    try {
+      const etherSim = LiquidEther(heroEtherContainer, {
+        colors: ['#5227FF', '#FF6FA5', '#B19EEF', '#00F0FF'],
+        mouseForce: 28,
+        cursorSize: 125,
+        resolution: 0.65,
+        BFECC: true,
+        autoDemo: true,
+        autoSpeed: 0.55,
+        autoIntensity: 2.2,
+        autoResumeDelay: 1200,
+        isViscous: false
+      });
+      window._liquidEtherSim = etherSim;
+    } catch (err) {
+      console.warn('LiquidEther WebGL init fallback:', err);
+    }
+  }
+
   // Toast Notification Helper
   function showToast(message) {
     const container = document.getElementById('toast-container');

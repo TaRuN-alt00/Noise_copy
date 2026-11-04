@@ -21,6 +21,10 @@
   
   <!-- Confetti CDN for Checkout -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Three.js + Liquid Ether Navier-Stokes WebGL Fluid Dynamics Component -->
+  <script src="three.min.js"></script>
+  <script src="liquid-ether.js"></script>
 </head>
 <body class="noise-body">
 
@@ -214,6 +218,9 @@
     <div class="hero-stage-wrapper">
       <div class="hero-curved-card" id="hero-curved-card">
         
+        <!-- Interactive Liquid Ether Fluid Simulation Background (WebGL Navier-Stokes) -->
+        <div class="hero-liquid-ether-canvas" id="hero-liquid-ether" aria-hidden="true"></div>
+
         <!-- White Scroll Transition Overlay (Opacity 0 -> 1 on scroll) -->
         <div class="hero-scroll-white-overlay" id="hero-scroll-overlay"></div>
 
