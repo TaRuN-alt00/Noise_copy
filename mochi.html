@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mochi — Music, But Make It Cute | Masterpiece 03</title>
+  <meta name="description" content="Mochi: A soft editorial-cute pastel headphone experience. 30hr battery, 250g featherlight, cloud-soft memory cushions, and 5 dreamy colourways.">
+
+  <!-- Google Fonts: Fraunces (SOFT 100, WONK 1), DM Sans, Caveat Brush -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..600,100,1;1,9..144,400..600,100,1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="mochi-style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Floating Minimal Navigation Header -->
+  <header class="mochi-header">
+    <div class="mochi-nav-container">
+      <div class="mochi-nav-left">
+        <a href="index.html" class="mochi-brand-pill" title="Back to Noise Store">
+          <span class="mochi-badge-dot"></span>
+          <span class="mochi-logo-text">mochi</span>
+        </a>
+      </div>
+
+      <!-- Masterpiece 01 / 02 / 03 Switcher -->
+      <div class="mochi-nav-center">
+        <nav class="mpt-switcher-pill" aria-label="Masterpiece Editions Switcher">
+          <a href="masterpiece.html" class="mpt-tab-link" title="Masterpiece 01: Core One Watch">
+            <span class="tab-tag">01</span>
+            <span>Core One</span>
+          </a>
+          <a href="masterpiece-2.html" class="mpt-tab-link" title="Masterpiece 02: Audira Headphones">
+            <span class="tab-tag">02</span>
+            <span>Audira</span>
+          </a>
+          <a href="masterpiece-3.html" class="mpt-tab-link active" title="Masterpiece 03: Mochi Pastel">
+            <span class="tab-tag">03</span>
+            <span>Mochi</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="mochi-nav-right">
+        <button class="mochi-cart-pill" id="open-cart-btn" aria-label="Open Pre-Order Bag">
+          <span>Bag</span>
+          <span class="mochi-cart-count" id="cart-count">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       STAGE 1: MULTIPLY-BLENDED HEADPHONE HERO (300svh)
+       Milk Ground #FFF8F6 • Multiply Blended Photo • Poster MOCHI Wordmark
+       ========================================================================= -->
+  <section class="stage-hero" id="stage-hero" aria-label="Mochi Pastel Headphone Hero">
+    <div class="sticky-inner">
+      
+      <!-- Top Text Layer -->
+      <div class="hero-type-layer">
+        <div class="hero-overline script-note">music, but make it cute</div>
+        <h1 class="hero-wordmark">MOCHI</h1>
+      </div>
+
+      <!-- Multiply-blended Headphone Visual -->
+      <div class="hero-visual-layer">
+        <img src="assets/mochi/mochi-hero.jpg" alt="Mochi pastel strawberry headphones" class="hero-headphone-img" id="hero-img">
+      </div>
+
+      <!-- Three Base Straps in Darker Plum -->
+      <div class="hero-straps-row font-furniture">
+        <span class="hero-strap">30hr battery life</span>
+        <span class="hero-strap">250g featherlight</span>
+        <span class="hero-strap">5 pastel colourways</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       STAGE 2: BOTTOM-UP IMAGE REVEAL (320svh)
+       Clip-path Wipe Up • Difference Headline • Caption Reveal > 45%
+       ========================================================================= -->
+  <section class="stage-reveal" id="stage-reveal" aria-label="Mochi Editorial Flat-lay Reveal">
+    <div class="sticky-inner">
+
+      <!-- Bottom-up Clipped Photo -->
+      <div class="reveal-img-wrap">
+        <img src="assets/mochi/mochi-flatlay.jpg" alt="Aesthetic flat-lay with pastel headphones, stickers and journal" class="reveal-img">
+      </div>
+
+      <!-- Centered Difference-Blended Headline -->
+      <div class="reveal-headline-layer">
+        <h2 class="reveal-headline font-display">Soft on ears.<br>Loud on vibes.</h2>
+      </div>
+
+      <!-- Bottom-Left Caption (Fades IN after 45% reveal) -->
+      <div class="reveal-caption-card" id="reveal-caption">
+        <span class="sparkle">🌸</span>
+        <span class="reveal-caption-text">memory-foam cushions, zero ear pain</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       STAGE 3: SPEC ROWS ON DEEP PLUM (360svh)
+       Deep Plum #2A1B2E • Cumulatively Lit Spec Rows • Scaling Product Still
+       ========================================================================= -->
+  <section class="stage-specs" id="stage-specs" aria-label="Mochi Acoustic Specifications">
+    <div class="sticky-inner">
+      <div class="specs-grid">
+
+        <!-- Left Column: Specs with cumulative lighting -->
+        <div class="specs-left-col">
+          <span class="specs-section-tag">Acoustic Engineering</span>
+          <h2 class="specs-main-title font-display">Cute outside,<br><em>serious</em> inside</h2>
+
+          <div class="specs-rows-wrap">
+            <div class="spec-row" id="spec-row-0">
+              <div class="spec-row-left">
+                <span class="spec-row-index">01</span>
+                <span class="spec-row-name">Battery</span>
+              </div>
+              <span class="spec-row-val">30 hrs</span>
+            </div>
+
+            <div class="spec-row" id="spec-row-1">
+              <div class="spec-row-left">
+                <span class="spec-row-index">02</span>
+                <span class="spec-row-name">Drivers</span>
+              </div>
+              <span class="spec-row-val">40mm custom tuned</span>
+            </div>
+
+            <div class="spec-row" id="spec-row-2">
+              <div class="spec-row-left">
+                <span class="spec-row-index">03</span>
+                <span class="spec-row-name">Noise cancelling</span>
+              </div>
+              <span class="spec-row-val">Hybrid ANC (38dB)</span>
+            </div>
+
+            <div class="spec-row" id="spec-row-3">
+              <div class="spec-row-left">
+                <span class="spec-row-index">04</span>
+                <span class="spec-row-name">Weight</span>
+              </div>
+              <span class="spec-row-val">250 g featherlight</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Product Still in 4/5 Frame with Solid Pink Pill -->
+        <div class="specs-right-col">
+          <div class="spec-photo-frame">
+            <img src="assets/mochi/mochi-still.jpg" alt="Mochi Strawberry Milk Headphone Still" id="spec-still-img">
+            <span class="spec-pill-badge">New: Strawberry Milk</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       BAND 1: BABY-PINK STATEMENT BAND (#FFD9E2)
+       Three Columns: Comfort, Sound, Charm
+       ========================================================================= -->
+  <section class="band-statement" aria-label="Mochi Brand Philosophy">
+    <div class="statement-container">
+      <div class="statement-headline-wrap">
+        <h2 class="statement-headline font-display">
+          Made for late-night playlists, library days <em>and everything in between.</em>
+          <span class="statement-note script-note">so cute!</span>
+        </h2>
+      </div>
+
+      <div class="statement-columns-grid">
+        <article class="statement-col">
+          <div class="col-tag">01 / Ergonomics</div>
+          <h3 class="col-title font-display">Comfort</h3>
+          <p class="col-desc">Ultra-plush marshmallow memory-foam pads enveloped in breathable vegan protein leather. Zero pressure points even during 8-hour marathon study sessions.</p>
+        </article>
+
+        <article class="statement-col">
+          <div class="col-tag">02 / Tuning</div>
+          <h3 class="col-title font-display">Sound</h3>
+          <p class="col-desc">Bespoke 40mm bio-cellulose dynamic drivers tuned for rich lo-fi chords, warm vocal air, and punchy sub-bass that won't overwhelm your ears.</p>
+        </article>
+
+        <article class="statement-col">
+          <div class="col-tag">03 / Aesthetic</div>
+          <h3 class="col-title font-display">Charm</h3>
+          <p class="col-desc">Smooth satin touch feel with tactile metallic click wheels and delicate pastel tones. Crafted to elevate your everyday outfit with effortless aesthetic warmth.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       BAND 2: LILAC COLOURWAY TABLE (#E6DBFF)
+       5 Pastel Shades + Swatch Dots + Bubblegum CTA Pill
+       ========================================================================= -->
+  <section class="band-colourways" id="colourways" aria-label="Mochi Dreamy Colourways">
+    <div class="colourways-container">
+      <div class="colourways-header">
+        <div>
+          <span class="col-tag" style="color: var(--color-ink-plum);">Palette Collection</span>
+          <h2 class="colourways-title font-display">Five dreamy colourways.</h2>
+        </div>
+        <p class="font-display" style="font-size: 1.15rem; font-style: italic; color: var(--color-ink-plum); max-width: 380px;">
+          Each shade is hand-blended with a soft matte anti-fingerprint coating.
+        </p>
+      </div>
+
+      <div class="colourways-table">
+        <!-- Row 1: Strawberry Milk -->
+        <div class="colourway-row" data-name="Strawberry Milk" data-price="₹6,499" data-img="assets/mochi/mochi-still.jpg">
+          <div class="cw-name-wrap">
+            <span class="swatch-dot" style="background-color: var(--color-band-pink);"></span>
+            <span class="cw-title">Strawberry Milk</span>
+          </div>
+          <span class="cw-desc">Soft spun sugar & rose blush with subtle gold accents</span>
+          <span class="cw-price">₹6,499</span>
+          <div class="cw-cta-wrap">
+            <button class="btn-cw-select">Select</button>
+          </div>
+        </div>
+
+        <!-- Row 2: Lavender Latte -->
+        <div class="colourway-row" data-name="Lavender Latte" data-price="₹6,499" data-img="assets/mochi/mochi-hero.jpg">
+          <div class="cw-name-wrap">
+            <span class="swatch-dot" style="background-color: var(--color-band-lilac);"></span>
+            <span class="cw-title">Lavender Latte</span>
+          </div>
+          <span class="cw-desc">Dreamy cool violet with creamy calming undertones</span>
+          <span class="cw-price">₹6,499</span>
+          <div class="cw-cta-wrap">
+            <button class="btn-cw-select">Select</button>
+          </div>
+        </div>
+
+        <!-- Row 3: Butter Cookie -->
+        <div class="colourway-row" data-name="Butter Cookie" data-price="₹6,499" data-img="assets/mochi/cute-flatlay.jpg">
+          <div class="cw-name-wrap">
+            <span class="swatch-dot" style="background-color: var(--color-band-butter);"></span>
+            <span class="cw-title">Butter Cookie</span>
+          </div>
+          <span class="cw-desc">Warm toasted vanilla bean with satin cream headband</span>
+          <span class="cw-price">₹6,499</span>
+          <div class="cw-cta-wrap">
+            <button class="btn-cw-select">Select</button>
+          </div>
+        </div>
+
+        <!-- Row 4: Mint Matcha -->
+        <div class="colourway-row" data-name="Mint Matcha" data-price="₹6,499" data-img="assets/mochi/mochi-flatlay.jpg">
+          <div class="cw-name-wrap">
+            <span class="swatch-dot" style="background-color: var(--color-swatch-mint);"></span>
+            <span class="cw-title">Mint Matcha</span>
+          </div>
+          <span class="cw-desc">Fresh sweet matcha cream with crisp brushed silver</span>
+          <span class="cw-price">₹6,499</span>
+          <div class="cw-cta-wrap">
+            <button class="btn-cw-select">Select</button>
+          </div>
+        </div>
+
+        <!-- Row 5: Cloud White -->
+        <div class="colourway-row" data-name="Cloud White" data-price="₹6,499" data-img="assets/mochi/pastel-pink-headphone.jpg">
+          <div class="cw-name-wrap">
+            <span class="swatch-dot" style="background-color: var(--color-ground);"></span>
+            <span class="cw-title">Cloud White</span>
+          </div>
+          <span class="cw-desc">Pure warm porcelain white with soft pearlescent luster</span>
+          <span class="cw-price">₹6,499</span>
+          <div class="cw-cta-wrap">
+            <button class="btn-cw-select">Select</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="colourways-bottom-cta">
+        <a href="#colourways" class="btn-pill-cta" id="btn-main-cta">
+          <span>Pick your colour</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       BAND 3: BABY-PINK FAQ (#FFD9E2)
+       Native <details> with CSS-only plus/cross indicator
+       ========================================================================= -->
+  <section class="band-faq" aria-label="Frequently Asked Questions">
+    <div class="faq-container">
+      <div class="faq-title-wrap">
+        <span class="col-tag" style="color: var(--color-accent-pink);">Got Questions?</span>
+        <h2 class="faq-title font-display">Everything you need to know.</h2>
+      </div>
+
+      <div class="faq-accordion">
+        <details class="faq-item" open>
+          <summary class="faq-question">
+            <span>How long does the battery really last?</span>
+            <span class="faq-icon-plus" aria-hidden="true"></span>
+          </summary>
+          <p class="faq-answer">Mochi provides up to 30 hours of continuous music and calls on a single charge. If you're in a rush before class, a rapid 10-minute USB-C boost delivers over 4 hours of listening time.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Will Mochi fit comfortably on smaller heads?</span>
+            <span class="faq-icon-plus" aria-hidden="true"></span>
+          </summary>
+          <p class="faq-answer">Yes, absolutely! We designed the ergonomic headband arc with calibrated gentle clamp force and a featherlight 250-gram chassis, ensuring it stays secure without sliding down or causing temple pain.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>What is the warranty and return policy?</span>
+            <span class="faq-icon-plus" aria-hidden="true"></span>
+          </summary>
+          <p class="faq-answer">Every Mochi headphone comes with our 1-Year Comprehensive Replacement Guarantee. If you ever change your mind about your colour choice, we offer a 14-day hassle-free doorstep exchange policy.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>How clear is the microphone for study calls & Zoom?</span>
+            <span class="faq-icon-plus" aria-hidden="true"></span>
+          </summary>
+          <p class="faq-answer">Mochi features dual environmental-noise-cancelling beamforming microphones that isolate your voice while suppressing background ambient noise from cafes or roommates.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Can I connect to both my laptop and phone at once?</span>
+            <span class="faq-icon-plus" aria-hidden="true"></span>
+          </summary>
+          <p class="faq-answer">Yes, Mochi supports seamless multipoint Bluetooth 5.3 pairing. You can watch lectures on your laptop and instantly take an incoming call on your phone without re-pairing.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PAGE SWITCHER FOOTER STRIP
+       Links back to Masterpiece 01 (Watch) and 02 (Audira)
+       ========================================================================= -->
+  <section class="mochi-next-edition-strip">
+    <div class="strip-container">
+      <div class="strip-info">
+        <span class="col-tag">Explore More Masterpieces</span>
+        <h3 class="font-display">The Noise Master Series</h3>
+        <p>Hop between our flagship mechanical teardown and acoustic design journeys.</p>
+      </div>
+
+      <div class="strip-links-row">
+        <a href="masterpiece.html" class="btn-strip-edition">
+          <span>01 Core One Watch</span>
+          <span>→</span>
+        </a>
+        <a href="masterpiece-2.html" class="btn-strip-edition">
+          <span>02 Audira Headphones</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mochi-footer font-furniture">
+    <p>© 2026 MOCHI ACOUSTICS • NOISE MASTERPIECE SERIES CONCEPT</p>
+  </footer>
+
+  <!-- =========================================================================
+       SLIDE-IN PRE-ORDER BAG DRAWER (Mochi Theme)
+       ========================================================================= -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer" id="cart-drawer">
+      <div class="drawer-header">
+        <h3 class="font-display">Your Cute Bag</h3>
+        <button class="drawer-close-btn" id="close-cart-btn" aria-label="Close Bag">&times;</button>
+      </div>
+
+      <div class="drawer-body">
+        <div class="cart-product-item">
+          <img src="assets/mochi/mochi-still.jpg" alt="Mochi Headphone" class="cart-item-img" id="drawer-item-img">
+          <div class="cart-item-details">
+            <h4 class="cart-item-title" id="drawer-item-title">Mochi // Strawberry Milk</h4>
+            <p class="cart-item-color" id="drawer-item-color">Soft Pastel Edition • Strawberry Milk</p>
+            <div class="cart-item-price-row">
+              <span class="item-price" id="drawer-item-price">₹6,499</span>
+              <span class="item-old-price">₹10,999</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-summary-box">
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <strong id="drawer-item-total">₹6,499</strong>
+          </div>
+          <div class="summary-line">
+            <span>VIP Cute Voucher (MOCHI500)</span>
+            <span class="text-success">- ₹500</span>
+          </div>
+          <div class="summary-line">
+            <span>Express Priority Air</span>
+            <span class="text-free">FREE</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-line total-line">
+            <span>Total Payable</span>
+            <span class="final-price">₹5,999</span>
+          </div>
+        </div>
+
+        <div style="background: rgba(42, 27, 46, 0.04); padding: 12px 16px; border-radius: var(--radius-pill); display: flex; justify-content: space-between; align-items: center; font-size: 11px;">
+          <span>Coupon: <strong>MOCHI500</strong></span>
+          <span style="color: var(--color-accent-pink); font-weight: 700;">Applied ✨</span>
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        <button class="btn-checkout-mochi" id="checkout-btn">Complete Pre-Order</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="mochi-script.js"></script>
+</body>
+</html>
