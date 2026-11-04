@@ -246,9 +246,10 @@ body.noise-body {
 
 .hero-stage-section {
   padding: 24px 65px 44px;
-  background: linear-gradient(180deg, #000000 0%, #0d0d0d 18%, #222222 38%, #555555 62%, #9e9e9e 84%, #ffffff 100%);
+  background: transparent !important;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .hero-stage-wrapper {
@@ -578,44 +579,50 @@ body.noise-body {
    ========================================================================== */
 
 /* ==========================================================================
-   Store White Stage with Interactive White Ether Fluid Simulation Background
+   Full-Page Liquid Ether Navier-Stokes WebGL Fluid Dynamics Background
+   Spans entire main page (Hero, Categories, Top Picks, Festive Diwali, UNiDAYS)
+   Excludes Footer / Help & Feedback section completely
    ========================================================================== */
-.store-white-stage {
-  position: relative;
-  background: #ffffff;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.store-white-ether-canvas {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
+.main-page-liquid-ether {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
   height: 100vh;
-  margin-bottom: -100vh;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.95;
-  transition: opacity 0.4s ease;
+  overflow: hidden;
 }
 
-/* Make store section backgrounds transparent so white ether shows through the page gutters */
-.store-white-stage .store-section.white-bg {
+/* Make all store section backgrounds transparent so liquid ether flows seamlessly across the page */
+.store-section,
+.store-section.white-bg,
+.white-bg,
+.top-picks-section,
+.festive-campaign-section,
+.unidays-section {
+  background: transparent !important;
   background-color: transparent !important;
   position: relative;
   z-index: 1;
 }
 
 /* Ensure all cards, text, and interactive elements sit solidly on top with zero distortion */
-.store-white-stage .noise-product-card,
-.store-white-stage .category-tile-card,
-.store-white-stage .festive-product-card,
-.store-white-stage .festive-hero-card,
-.store-white-stage .unidays-banner-card {
+.noise-product-card,
+.category-tile-card,
+.festive-product-card,
+.festive-hero-card,
+.unidays-banner-card,
+.hero-curved-card {
   position: relative;
   z-index: 2;
   pointer-events: auto;
+}
+
+/* Real Noise Footer (Help & Feedback) - Completely opaque black and strictly sits above the fluid */
+.noise-real-footer {
+  position: relative;
+  z-index: 10;
+  background: #000000 !important;
 }
 
 .store-section {

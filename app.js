@@ -587,27 +587,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 10. White Ether Navier-Stokes WebGL Simulation (Full-Page White Stage Background)
-  // Luminous white ether fluid ripples across the page background without affecting products
+  // 10. Liquid Ether Navier-Stokes WebGL Fluid Simulation (Full Main Page Background)
+  // Flows across the entire main page behind all content; strictly excludes footer / help & feedback
   // =========================================================================
-  const whiteEtherContainer = document.getElementById('page-white-ether');
-  if (whiteEtherContainer && typeof LiquidEther === 'function' && typeof THREE !== 'undefined' && !prefersReducedMotion) {
+  const mainLiquidEtherContainer = document.getElementById('main-liquid-ether');
+  if (mainLiquidEtherContainer && typeof LiquidEther === 'function' && typeof THREE !== 'undefined' && !prefersReducedMotion) {
     try {
-      const whiteEtherSim = LiquidEther(whiteEtherContainer, {
-        colors: ['#ffffff', '#e8edf5', '#cbd5e1', '#b0c4de', '#8fa3bf'],
-        mouseForce: 30,
-        cursorSize: 140,
+      const liquidEtherSim = LiquidEther(mainLiquidEtherContainer, {
+        colors: ['#ffffff', '#7C3AED', '#38BDF8', '#FF6FA5', '#A855F7'],
+        mouseForce: 32,
+        cursorSize: 135,
         resolution: 0.65,
         BFECC: true,
         autoDemo: true,
-        autoSpeed: 0.45,
-        autoIntensity: 2.5,
-        autoResumeDelay: 1500,
+        autoSpeed: 0.55,
+        autoIntensity: 2.6,
+        autoResumeDelay: 1200,
         isViscous: false
       });
-      window._whiteEtherSim = whiteEtherSim;
+      window._liquidEtherSim = liquidEtherSim;
     } catch (err) {
-      console.warn('White Ether WebGL init fallback:', err);
+      console.warn('Liquid Ether WebGL init fallback:', err);
     }
   }
 

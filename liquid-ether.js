@@ -125,9 +125,10 @@
     'void main(){',
     '  vec2 vel = texture2D(velocity, uv).xy;',
     '  float lenv = clamp(length(vel), 0.0, 1.0);',
+    '  float density = clamp(pow(lenv * 2.8, 0.62), 0.0, 1.0);',
     '  vec3 c = texture2D(palette, vec2(lenv, 0.5)).rgb;',
-    '  vec3 outRGB = mix(bgColor.rgb, c, lenv);',
-    '  float outA = mix(bgColor.a, 0.85, lenv);',
+    '  vec3 outRGB = mix(bgColor.rgb, c, density);',
+    '  float outA = mix(bgColor.a, 0.88, density);',
     '  gl_FragColor = vec4(outRGB, outA);',
     '}'
   ].join('\n');
@@ -338,7 +339,17 @@
       isPointInside: function (clientX, clientY) {
         if (!this.container) return false;
         var rect = this.container.getBoundingClientRect();
-        return clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
+        var inside = clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
+        if (!inside) return false;
+        // Exclude footer / help & feedback section
+        var footer = document.querySelector('.noise-real-footer');
+        if (footer) {
+          var fRect = footer.getBoundingClientRect();
+          if (clientY >= fRect.top) {
+            return false;
+          }
+        }
+        return true;
       },
       updateHoverState: function (clientX, clientY) {
         this.isHoverInside = this.isPointInside(clientX, clientY);
@@ -434,7 +445,20 @@
 
     AutoDriver.prototype.pickNewTarget = function () {
       var r = Math.random;
-      this.target.set((r() * 2 - 1) * (1 - this.margin), (r() * 2 - 1) * (1 - this.margin));
+      var tx = (r() * 2 - 1) * (1 - this.margin);
+      var ty = (r() * 2 - 1) * (1 - this.margin);
+      var footer = document.querySelector('.noise-real-footer');
+      if (footer) {
+        var fRect = footer.getBoundingClientRect();
+        if (fRect.top < window.innerHeight) {
+          var footerTopNorm = 1.0 - (fRect.top / window.innerHeight) * 2.0;
+          if (footerTopNorm > -1.0) {
+            ty = Math.max(ty, footerTopNorm + 0.15);
+            if (ty > 0.85) ty = 0.85;
+          }
+        }
+      }
+      this.target.set(tx, ty);
     };
 
     AutoDriver.prototype.forceStop = function () {
@@ -449,6 +473,14 @@
       if (idle < this.resumeDelay || Mouse.isHoverInside) {
         if (this.active) this.forceStop();
         return;
+      }
+      var footer = document.querySelector('.noise-real-footer');
+      if (footer) {
+        var fRect = footer.getBoundingClientRect();
+        if (fRect.top <= 80) {
+          if (this.active) this.forceStop();
+          return;
+        }
       }
       if (!this.active) {
         this.active = true;
@@ -887,6 +919,22 @@
 
     window.addEventListener('resize', onResize);
 
+    // Subtle fluid momentum on window scroll
+    var lastScrollY = window.scrollY || window.pageYOffset || 0;
+    function onWindowScroll() {
+      var currY = window.scrollY || window.pageYOffset || 0;
+      var dy = currY - lastScrollY;
+      lastScrollY = currY;
+      if (Math.abs(dy) > 2) {
+        var footer = document.querySelector('.noise-real-footer');
+        if (footer && footer.getBoundingClientRect().top <= 80) return;
+        var scrollImpulseY = Math.sign(dy) * Math.min(Math.abs(dy) * 0.0025, 0.03);
+        Mouse.diff.y -= scrollImpulseY;
+        Mouse.mouseMoved = true;
+      }
+    }
+    window.addEventListener('scroll', onWindowScroll, { passive: true });
+
     if ('ResizeObserver' in window) {
       var ro = new ResizeObserver(function () {
         onResize();
@@ -920,6 +968,7 @@
       dispose: function () {
         pause();
         window.removeEventListener('resize', onResize);
+        window.removeEventListener('scroll', onWindowScroll);
         Mouse.dispose();
         if (Common.renderer && Common.renderer.domElement && Common.renderer.domElement.parentNode) {
           Common.renderer.domElement.parentNode.removeChild(Common.renderer.domElement);
