@@ -253,44 +253,140 @@
         </button>
       </div>
 
-      <!-- 3-Dots Dropdown Popover (Exact User Request) -->
-      <div class="three-dots-popover" id="three-dots-popover" role="menu">
-        <div class="three-dots-popover-inner">
-          <div class="popover-item">
-            <a href="masterpiece.html" class="popover-main-link">👑 Master Series</a>
-            <div class="popover-sub-links">
-              <a href="masterpiece.html" class="popover-sub-link">01 // Noise Core One Watch</a>
-              <a href="masterpiece-2.html" class="popover-sub-link">02 // Audira Modern Harmony</a>
-              <a href="masterpiece-3.html" class="popover-sub-link">03 // Mochi Pastel Cute ✨</a>
+      <!-- 3-Dots Dropdown Popover (Professional White Mega Menu - PC & Mobile) -->
+      <div class="three-dots-backdrop" id="three-dots-backdrop"></div>
+      <div class="three-dots-popover white-mega-theme" id="three-dots-popover" role="dialog" aria-modal="true" aria-label="Explore Noise">
+        <div class="popover-white-header">
+          <div class="popover-brand-wrap">
+            <span class="noise-wordmark-dark">noise</span>
+            <span class="popover-tagline">EXPLORE & NAVIGATION</span>
+          </div>
+          <button class="popover-white-close" id="three-dots-close" aria-label="Close menu">&times;</button>
+        </div>
+
+        <div class="popover-search-wrap">
+          <div class="popover-search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" placeholder="Search smartwatches, earbuds, audio..." id="popover-quick-search" class="popover-search-input">
+          </div>
+        </div>
+
+        <div class="three-dots-popover-inner white-inner-grid">
+          
+          <!-- Category 1: SMART WATCHES (Exact PC Mega Menu Style) -->
+          <div class="popover-white-section">
+            <h4 class="popover-cat-heading">
+              <a href="#categories">SMART WATCHES</a>
+            </h4>
+            <div class="popover-sub-columns">
+              <div class="popover-col-group">
+                <span class="popover-group-label">SHOP BY PRICE</span>
+                <ul class="popover-link-list">
+                  <li><a href="#festive-campaign-section">Above ₹6000</a></li>
+                  <li><a href="#top-picks">₹4000 - ₹6000</a></li>
+                  <li><a href="#top-picks">₹2000 - ₹4000</a></li>
+                  <li><a href="#top-picks">Under ₹2000</a></li>
+                </ul>
+              </div>
+              <div class="popover-col-group">
+                <span class="popover-group-label">SHOP BY TYPE</span>
+                <ul class="popover-link-list">
+                  <li><a href="#festive-campaign-section">Halo 2 Limited Edition</a></li>
+                  <li><a href="#top-picks">Metal Strap Watches</a></li>
+                  <li><a href="#top-picks">Round & Square Dials</a></li>
+                  <li><a href="#festive-campaign-section">Diva & Women Watches</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="popover-item">
-            <a href="#categories" class="popover-main-link">⌚ Smart Watches</a>
-            <div class="popover-sub-links">
-              <a href="#festive-campaign-section" class="popover-sub-link">All Smart Watches</a>
-              <a href="#categories" class="popover-sub-link">Shop by Category</a>
-              <a href="#top-picks" class="popover-sub-link">Halo 2 & ColorFit</a>
+
+          <!-- Category 2: EARBUDS & HEADPHONES -->
+          <div class="popover-white-section">
+            <h4 class="popover-cat-heading">
+              <a href="#categories">EARBUDS & HEADPHONES</a>
+            </h4>
+            <div class="popover-sub-columns">
+              <div class="popover-col-group">
+                <span class="popover-group-label">WIRELESS & ANC</span>
+                <ul class="popover-link-list">
+                  <li><a href="#top-picks">Master Buds Open</a></li>
+                  <li><a href="#festive-campaign-section">Noise Buds VS102 Plus</a></li>
+                  <li><a href="#top-picks">Active Noise Cancellation (ANC)</a></li>
+                  <li><a href="#top-picks">Sports & Bass TWS</a></li>
+                </ul>
+              </div>
+              <div class="popover-col-group">
+                <span class="popover-group-label">HEADPHONES</span>
+                <ul class="popover-link-list">
+                  <li><a href="masterpiece-2.html">Studio Wireless Over-Ear</a></li>
+                  <li><a href="#top-picks">Bluetooth Neckbands</a></li>
+                  <li><a href="#top-picks">Low Latency Gaming Earbuds</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="popover-item">
-            <a href="#top-picks" class="popover-main-link">🎧 Earbuds & Headphones</a>
-            <div class="popover-sub-links">
-              <a href="#top-picks" class="popover-sub-link">Master Buds Open</a>
-              <a href="#festive-campaign-section" class="popover-sub-link">Noise Buds VS102 Plus</a>
-              <a href="masterpiece-2.html" class="popover-sub-link">Audira Studio Series</a>
-              <a href="masterpiece-3.html" class="popover-sub-link">Mochi Pastel Series</a>
+
+          <!-- Category 3: HOME AUDIO & POWER -->
+          <div class="popover-white-section">
+            <h4 class="popover-cat-heading">
+              <a href="#hero-stage-section">HOME AUDIO & POWER</a>
+            </h4>
+            <div class="popover-sub-columns">
+              <div class="popover-col-group">
+                <span class="popover-group-label">ACOUSTICS</span>
+                <ul class="popover-link-list">
+                  <li><a href="#hero-stage-section">Studio Pro Monitors Duo</a></li>
+                  <li><a href="#hero-stage-section">Homestage Dolby Atmos</a></li>
+                  <li><a href="#hero-stage-section">Bluetooth Studio Speakers</a></li>
+                </ul>
+              </div>
+              <div class="popover-col-group">
+                <span class="popover-group-label">POWER SERIES</span>
+                <ul class="popover-link-list">
+                  <li><a href="#categories">Wireless Fast Chargers</a></li>
+                  <li><a href="#categories">Fast Charging Power Banks</a></li>
+                  <li><a href="#categories">Braided High-Speed Cables</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="popover-item">
-            <a href="#hero-stage-section" class="popover-main-link">🔊 Home Audio</a>
-            <div class="popover-sub-links">
-              <a href="#hero-stage-section" class="popover-sub-link">Studio Pro Monitors Duo</a>
-              <a href="#hero-stage-section" class="popover-sub-link">Homestage Dolby Atmos</a>
+
+          <!-- Category 4: MASTER SERIES (Clean, Single Dedicated Section) -->
+          <div class="popover-white-section popover-master-highlight">
+            <h4 class="popover-cat-heading">
+              <a href="masterpiece.html">NOISE MASTER SERIES</a>
+              <span class="popover-flagship-pill">FLAGSHIPS</span>
+            </h4>
+            <div class="popover-master-cards">
+              <a href="masterpiece.html" class="popover-master-pill">
+                <span class="p-num">01</span>
+                <span class="p-title">Noise Core One // 3D Interactive Teardown</span>
+              </a>
+              <a href="masterpiece-2.html" class="popover-master-pill">
+                <span class="p-num">02</span>
+                <span class="p-title">Audira // Planar-Magnetic Acoustics</span>
+              </a>
+              <a href="masterpiece-3.html" class="popover-master-pill">
+                <span class="p-num">03</span>
+                <span class="p-title">Mochi // Soft Editorial Series</span>
+              </a>
             </div>
           </div>
-          <div class="popover-item">
-            <a href="#categories" class="popover-main-link">⚡ Power Series</a>
-          </div>
+
+        </div>
+
+        <!-- Quick Help & Account Strip -->
+        <div class="popover-white-footer">
+          <a href="#account" class="p-footer-link">My Account</a>
+          <span class="p-footer-dot">•</span>
+          <a href="#support" class="p-footer-link">Track Order</a>
+          <span class="p-footer-dot">•</span>
+          <a href="#warranty" class="p-footer-link">Warranty</a>
+          <span class="p-footer-dot">•</span>
+          <a href="#support" class="p-footer-link">Help & Support</a>
         </div>
       </div>
 
