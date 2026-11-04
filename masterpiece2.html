@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Audira — Modern Harmony | Noise Masterpiece 02</title>
+  <meta name="description" content="Noise Masterpiece 02: Audira Flagship Headphones. A scroll-driven product story featuring 196-frame planar-magnetic engineering.">
+
+  <!-- Exact Fonts: Poppins (from zip) + Instrument Serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Standalone Audira Theme Stylesheet (Pure Cream + Warm Brown) -->
+  <link rel="stylesheet" href="audira-style.css">
+
+  <!-- GSAP + ScrollTrigger + Lenis for 60fps Scroll Experience -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <!-- Confetti CDN for Checkout -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="audira-page is-loading">
+
+  <!-- Preloader (Theme: Cream & Warm Brown) -->
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader__logo">Audira</div>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <p class="loader__text"><span id="loaderNum">0</span>%</p>
+  </div>
+
+  <!-- Masterpiece Floating Minimal Navbar -->
+  <header class="audira-header">
+    <div class="audira-nav-container">
+      <div class="audira-nav-left">
+        <a href="index.html" class="noise-brand-logo" aria-label="Back to Store">
+          <span class="noise-wordmark">noise</span>
+        </a>
+        <div class="mpt-nav-badge">
+          <span class="badge-dot"></span>
+          <span>MASTERPIECE 02 // AUDIRA</span>
+        </div>
+      </div>
+
+      <!-- Masterpiece Page 1 & Page 2 Switcher -->
+      <div class="audira-nav-center">
+        <div class="mpt-switcher-pill">
+          <a href="masterpiece.html" class="tab-link" title="Page 1: Noise Core One Watch">
+            <span class="tab-tag">01</span>
+            <span>Core One Watch</span>
+          </a>
+          <a href="masterpiece-2.html" class="tab-link active" title="Page 2: Audira Headphones">
+            <span class="tab-tag">02</span>
+            <span>Audira Headphones</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="audira-nav-right">
+        <a href="index.html" class="btn-back-store-audira">
+          <span class="back-arrow">←</span>
+          <span>Back to Store</span>
+        </a>
+
+        <!-- Cart Bag with Live Counter Badge -->
+        <button class="cart-btn-audira" id="open-cart-btn" aria-label="Cart" title="Shopping Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge-audira" id="cart-counter">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =====================================================================
+         196-FRAME AUDIRA HEADPHONE SCROLL EXPERIENCE
+         GSAP Pinned Stage: Smooth 60fps Scrubbing with NO missing middle!
+         Unobstructed native video typography (MODERN HARMONY -> TRUE CLARITY -> MASTERBEAT)
+         ===================================================================== -->
+    <section class="track" id="track" aria-label="Audira headphones acoustic story">
+      <div class="stage">
+        <canvas id="stage" role="img" aria-label="Audira Headphones travelling across the page as you scroll"></canvas>
+        <div class="hint" id="hint">Scroll</div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TOP PICKS SECTION (Real HTML + Transparent Cutouts from zip)
+         ===================================================================== -->
+    <section class="picks" id="picks">
+      <div class="picks__header">
+        <span class="picks__eyebrow">CHOOSE YOUR SIGNATURE EDITION</span>
+        <h2 class="picks__title">Top picks</h2>
+        <p class="picks__subtitle">Three bespoke acoustic tunings. Handcrafted with planar composite drivers and Italian vegan leather.</p>
+      </div>
+
+      <div class="picks__grid">
+        <!-- Pick 1: Audira One -->
+        <article class="pick" data-name="Audira One" data-color="Forest Green" data-price="₹4,499" data-img="hp-assets/headphone-one.webp">
+          <div class="pick__img">
+            <img src="hp-assets/headphone-one.webp" alt="Audira One headphones in forest green" width="776" height="864" loading="lazy">
+          </div>
+          <h3>Audira One</h3>
+          <p class="pick__tone">Forest green</p>
+          <p class="pick__specs">Planar Transducers • 32h Battery • Lightweight</p>
+          <p class="pick__price">₹4,499</p>
+          <button class="btn-pick-order" data-product="Audira One" data-price="4499" data-tone="Forest green">
+            <span>Pre-Order Edition</span>
+            <span>→</span>
+          </button>
+        </article>
+
+        <!-- Pick 2: Audira Pulse (Main Flagship) -->
+        <article class="pick pick--main" data-name="Audira Pulse" data-color="Copper Brown" data-price="₹7,999" data-img="hp-assets/headphone-pulse.webp">
+          <span class="pick__badge">Flagship Signature</span>
+          <div class="pick__img">
+            <img src="hp-assets/headphone-pulse.webp" alt="Audira Pulse headphones in copper brown" width="776" height="864" loading="lazy">
+          </div>
+          <h3>Audira Pulse</h3>
+          <p class="pick__tone">Copper brown</p>
+          <p class="pick__specs">Dual 50mm Planar Drivers • Active Noise Cancel • 40h Battery</p>
+          <p class="pick__price">₹7,999</p>
+          <button class="btn-pick-order" data-product="Audira Pulse" data-price="7999" data-tone="Copper brown">
+            <span>Pre-Order Flagship</span>
+            <span>→</span>
+          </button>
+        </article>
+
+        <!-- Pick 3: Audira Max Pro -->
+        <article class="pick" data-name="Audira Max Pro" data-color="Espresso Black" data-price="₹11,499" data-img="hp-assets/headphone-maxpro.webp">
+          <div class="pick__img">
+            <img src="hp-assets/headphone-maxpro.webp" alt="Audira Max Pro headphones in espresso black" width="776" height="864" loading="lazy">
+          </div>
+          <h3>Audira Max Pro</h3>
+          <p class="pick__tone">Espresso black</p>
+          <p class="pick__specs">Studio Diaphragm • Ultra Lossless Audio • 50h Battery</p>
+          <p class="pick__price">₹11,499</p>
+          <button class="btn-pick-order" data-product="Audira Max Pro" data-price="11499" data-tone="Espresso black">
+            <span>Pre-Order Edition</span>
+            <span>→</span>
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         PAGE 1 <-> PAGE 2 NAVIGATION SWITCHER BANNER
+         ===================================================================== -->
+    <section class="masterpiece-page-switch-strip">
+      <div class="switch-strip-container">
+        <div class="switch-strip-left">
+          <span class="switch-strip-tag">MASTERPIECE 01 // TELEMETRY WATCH</span>
+          <h3 class="switch-strip-title">Noise Core One</h3>
+          <p class="switch-strip-desc">Experience our 240-frame titanium teardown and live optical biometric matrix.</p>
+        </div>
+        <a href="masterpiece.html" class="btn-switch-page">
+          <span>← Experience Page 1: Core One</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span class="foot__logo">Audira</span>
+    <span>© 2026 Noise Masterpiece Series. Concept project.</span>
+  </footer>
+
+  <!-- Slide-in Shopping Bag Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer" id="cart-drawer">
+      <div class="drawer-header">
+        <div class="drawer-title-wrap">
+          <h3>Shopping Bag</h3>
+          <span class="drawer-item-count">(1 item)</span>
+        </div>
+        <button class="drawer-close-btn" id="close-cart-btn">&times;</button>
+      </div>
+
+      <div class="drawer-body">
+        <div class="cart-product-item" id="cart-item-watch">
+          <img src="hp-assets/headphone-pulse.webp" alt="Audira Pulse" class="cart-item-img" id="drawer-hp-img">
+          <div class="cart-item-details">
+            <h4 class="cart-item-title" id="drawer-hp-title">Audira Pulse // Flagship Headphones</h4>
+            <p class="cart-item-color" id="drawer-hp-color">Launch Edition • Copper Brown</p>
+            <div class="cart-item-price-row">
+              <span class="item-price" id="drawer-hp-price">₹7,999</span>
+              <span class="item-old-price">₹14,999</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-summary-box">
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <strong id="drawer-hp-subtotal">₹7,999</strong>
+          </div>
+          <div class="summary-line">
+            <span>VIP Launch Voucher (NOISEVIP500)</span>
+            <span style="color: #16a34a; font-weight: 600;">-₹500</span>
+          </div>
+          <div class="summary-line">
+            <span>Express Shipping (Priority Air)</span>
+            <span style="color: #16a34a; font-weight: 600;">FREE</span>
+          </div>
+          <div class="summary-total-line">
+            <span>Total Payable</span>
+            <strong id="drawer-hp-total">₹7,499</strong>
+          </div>
+        </div>
+
+        <div class="coupon-box">
+          <span style="font-size: 0.85rem; color: #8a6a55;">Coupon: <strong style="color: #5a3520;">NOISEVIP500</strong></span>
+          <span style="font-size: 0.75rem; color: #16a34a; background: rgba(22,163,74,0.12); padding: 3px 8px; border-radius: 4px; font-weight: 600;">Applied</span>
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        <button class="btn-pick-order" id="checkout-btn" style="background: #e8913f; color: #ffffff;">
+          <span>Complete Secure Checkout</span>
+          <span>→</span>
+        </button>
+        <div class="secure-guarantee">
+          <span>🔒 End-to-End Encrypted UPI / NetBanking / Cards</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="hp-colors.js"></script>
+  <script src="audira-experience.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const openCart = () => {
+        const cartOverlay = document.getElementById('cart-drawer-overlay');
+        if (cartOverlay) cartOverlay.classList.add('active');
+        if (typeof confetti === 'function') {
+          confetti({ particleCount: 90, spread: 75, origin: { y: 0.6 } });
+        }
+      };
+
+      const openCartBtn = document.getElementById('open-cart-btn');
+      if (openCartBtn) openCartBtn.addEventListener('click', () => {
+        const cartOverlay = document.getElementById('cart-drawer-overlay');
+        if (cartOverlay) cartOverlay.classList.add('active');
+      });
+
+      const closeCartBtn = document.getElementById('close-cart-btn');
+      if (closeCartBtn) closeCartBtn.addEventListener('click', () => {
+        const cartOverlay = document.getElementById('cart-drawer-overlay');
+        if (cartOverlay) cartOverlay.classList.remove('active');
+      });
+
+      // Product buttons
+      const orderBtns = document.querySelectorAll('.btn-pick-order');
+      orderBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const card = btn.closest('.pick');
+          if (card) {
+            const name = card.dataset.name;
+            const color = card.dataset.color;
+            const price = card.dataset.price;
+            const img = card.dataset.img;
+
+            const tEl = document.getElementById('drawer-hp-title');
+            const cEl = document.getElementById('drawer-hp-color');
+            const pEl = document.getElementById('drawer-hp-price');
+            const subEl = document.getElementById('drawer-hp-subtotal');
+            const totEl = document.getElementById('drawer-hp-total');
+            const imgEl = document.getElementById('drawer-hp-img');
+
+            if (tEl) tEl.textContent = name + ' // Headphone';
+            if (cEl) cEl.textContent = 'Launch Edition • ' + color;
+            if (pEl) pEl.textContent = price;
+            if (subEl) subEl.textContent = price;
+            if (imgEl && img) imgEl.src = img;
+
+            const numericPrice = parseInt(price.replace(/[^0-9]/g, ''), 10) || 7999;
+            const finalPayable = Math.max(0, numericPrice - 500);
+            if (totEl) totEl.textContent = '₹' + finalPayable.toLocaleString('en-IN');
+          }
+          openCart();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

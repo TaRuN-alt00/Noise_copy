@@ -1,0 +1,979 @@
+/* =====================================================================
+   AUDIRA — MASTERPIECE 02 STYLESHEET
+   Exact Theme Preserved: Cream (#e4dece) + Warm Brown (#5a3520) + Orange (#e8913f)
+   GSAP Pinned Architecture + Lenis Smooth Scroll
+   ===================================================================== */
+
+:root {
+  --cream: #e4dece;
+  --cream-dark: #dad3c1;
+  --brown: #5a3520;
+  --brown-soft: #8a6a55;
+  --orange: #e8913f;
+  --orange-hover: #d77f2d;
+  --ink: #1b1410;
+  --font: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--cream);
+  color-scheme: light;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body.audira-page {
+  background: var(--cream) !important;
+  color: var(--brown);
+  font-family: var(--font);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body.is-loading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
+}
+
+/* =====================================================================
+   1. FLOATING NAVIGATION BAR (Warm Acoustic Theme)
+   ===================================================================== */
+.audira-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: rgba(228, 222, 206, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(90, 53, 32, 0.14);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.audira-nav-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.audira-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.noise-brand-logo {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.noise-wordmark {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: var(--brown);
+  text-transform: lowercase;
+}
+
+.mpt-nav-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  background: rgba(90, 53, 32, 0.08);
+  border: 1px solid rgba(90, 53, 32, 0.16);
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: var(--brown-soft);
+  text-transform: uppercase;
+}
+
+.mpt-nav-badge .badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 8px rgba(232, 145, 63, 0.6);
+}
+
+/* Masterpiece Switcher Pills */
+.audira-nav-center {
+  display: flex;
+  align-items: center;
+}
+
+.mpt-switcher-pill {
+  display: flex;
+  align-items: center;
+  background: rgba(90, 53, 32, 0.08);
+  border: 1px solid rgba(90, 53, 32, 0.14);
+  padding: 4px;
+  border-radius: 30px;
+  gap: 4px;
+}
+
+.mpt-switcher-pill .tab-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 16px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--brown-soft);
+  transition: all 0.25s ease;
+}
+
+.mpt-switcher-pill .tab-link .tab-tag {
+  font-size: 0.68rem;
+  opacity: 0.7;
+}
+
+.mpt-switcher-pill .tab-link:hover {
+  color: var(--brown);
+  background: rgba(90, 53, 32, 0.05);
+}
+
+.mpt-switcher-pill .tab-link.active {
+  background: var(--brown);
+  color: var(--cream);
+  box-shadow: 0 2px 8px rgba(90, 53, 32, 0.2);
+}
+
+.mpt-switcher-pill .tab-link.active .tab-tag {
+  color: var(--orange);
+  opacity: 1;
+}
+
+.audira-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-back-store-audira {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--brown);
+  text-decoration: none;
+  padding: 8px 18px;
+  background: rgba(90, 53, 32, 0.07);
+  border: 1px solid rgba(90, 53, 32, 0.16);
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+
+.btn-back-store-audira:hover {
+  background: rgba(90, 53, 32, 0.14);
+  transform: translateX(-2px);
+}
+
+.cart-btn-audira {
+  position: relative;
+  background: rgba(90, 53, 32, 0.07);
+  border: 1px solid rgba(90, 53, 32, 0.16);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--brown);
+  transition: all 0.2s ease;
+}
+
+.cart-btn-audira:hover {
+  background: rgba(90, 53, 32, 0.14);
+  transform: scale(1.05);
+}
+
+.cart-count-badge-audira {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--orange);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =====================================================================
+   2. PRELOADER
+   ===================================================================== */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: var(--cream);
+  transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.loader.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader__logo {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  color: var(--brown);
+  letter-spacing: -0.02em;
+}
+
+.loader__bar {
+  width: min(260px, 60vw);
+  height: 3px;
+  background: rgba(90, 53, 32, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.loader__bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--orange);
+  transition: width 0.1s ease-out;
+}
+
+.loader__text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--brown-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+/* =====================================================================
+   3. SCROLL TRACK & PINNED STAGE (No missing middle part!)
+   ===================================================================== */
+.track {
+  position: relative;
+  width: 100%;
+  background: var(--cream);
+}
+
+.stage {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+#stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Scroll Hint */
+.hint {
+  position: absolute;
+  left: 50%;
+  bottom: 1.8rem;
+  transform: translateX(-50%);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brown-soft);
+  padding-bottom: 1.5rem;
+  transition: opacity 0.4s;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hint::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 1px;
+  height: 1.2rem;
+  background: var(--brown-soft);
+  transform-origin: top;
+  animation: drip 1.8s ease-in-out infinite;
+}
+
+@keyframes drip {
+  0% { transform: scaleY(0); opacity: 0; }
+  50% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+/* =====================================================================
+   4. TOP PICKS SECTION (Real HTML + Transparent Cutouts from zip)
+   ===================================================================== */
+.picks {
+  background: var(--cream);
+  padding: clamp(4rem, 8vw, 6.5rem) clamp(1.4rem, 5vw, 4rem) clamp(4rem, 8vw, 7rem);
+  position: relative;
+  z-index: 20;
+}
+
+.picks__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+}
+
+.picks__eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+.picks__title {
+  font-family: var(--font);
+  font-weight: 800;
+  font-size: clamp(2.8rem, 6.5vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--brown);
+  margin: 0;
+}
+
+.picks__subtitle {
+  font-size: 1.02rem;
+  color: var(--brown-soft);
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
+.picks__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3.5vw, 3.5rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: end;
+}
+
+.pick {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(90, 53, 32, 0.12);
+  border-radius: 24px;
+  padding: 34px 26px 28px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  position: relative;
+}
+
+.pick:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(90, 53, 32, 0.12);
+  border-color: rgba(90, 53, 32, 0.22);
+}
+
+.pick--main {
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid var(--orange);
+  transform: scale(1.04);
+  box-shadow: 0 16px 36px rgba(232, 145, 63, 0.16);
+}
+
+.pick--main:hover {
+  transform: scale(1.04) translateY(-8px);
+  box-shadow: 0 24px 50px rgba(232, 145, 63, 0.24);
+}
+
+.pick__badge {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: var(--orange);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.pick__img {
+  position: relative;
+  padding: 0 6%;
+  margin-bottom: 1.5rem;
+}
+
+.pick__img::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: -6%;
+  height: 12%;
+  background: radial-gradient(ellipse at center, rgba(90, 53, 32, 0.28), transparent 70%);
+  z-index: 0;
+}
+
+.pick__img img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.pick:hover .pick__img img {
+  transform: scale(1.04);
+}
+
+.pick h3 {
+  font-weight: 700;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  color: var(--brown);
+  margin-bottom: 4px;
+}
+
+.pick__tone {
+  font-size: 0.88rem;
+  color: var(--brown-soft);
+  margin-bottom: 8px;
+}
+
+.pick__specs {
+  font-size: 0.78rem;
+  color: var(--brown-soft);
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+
+.pick__price {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--brown);
+  margin-bottom: 16px;
+}
+
+.btn-pick-order {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 20px;
+  background: var(--brown);
+  color: var(--cream);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-pick-order:hover {
+  background: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(27, 20, 16, 0.2);
+}
+
+.pick--main .btn-pick-order {
+  background: var(--orange);
+  color: #ffffff;
+}
+
+.pick--main .btn-pick-order:hover {
+  background: var(--orange-hover);
+  box-shadow: 0 8px 20px rgba(232, 145, 63, 0.35);
+}
+
+/* =====================================================================
+   5. NEXT MASTERPIECE NAVIGATION STRIP (Page 1 <-> Page 2 Link)
+   ===================================================================== */
+.masterpiece-page-switch-strip {
+  background: rgba(90, 53, 32, 0.05);
+  border-top: 1px solid rgba(90, 53, 32, 0.12);
+  border-bottom: 1px solid rgba(90, 53, 32, 0.12);
+  padding: 60px clamp(1.4rem, 5vw, 4rem);
+}
+
+.switch-strip-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.switch-strip-left {
+  max-width: 550px;
+}
+
+.switch-strip-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.switch-strip-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 400;
+  color: var(--brown);
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+
+.switch-strip-desc {
+  font-size: 0.95rem;
+  color: var(--brown-soft);
+  line-height: 1.5;
+}
+
+.btn-switch-page {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--brown);
+  color: var(--cream);
+  padding: 16px 34px;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 24px rgba(90, 53, 32, 0.2);
+}
+
+.btn-switch-page:hover {
+  background: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(27, 20, 16, 0.25);
+}
+
+/* =====================================================================
+   6. SHOPPING BAG DRAWER (Warm Audira Acoustic Palette)
+   ===================================================================== */
+.cart-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(27, 20, 16, 0.6);
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.cart-drawer-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -480px;
+  width: 440px;
+  max-width: 95vw;
+  height: 100vh;
+  height: 100svh;
+  background: var(--cream);
+  border-left: 1px solid rgba(90, 53, 32, 0.18);
+  box-shadow: -10px 0 40px rgba(27, 20, 16, 0.25);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10001;
+}
+
+.cart-drawer-overlay.active .cart-drawer {
+  right: 0;
+}
+
+.drawer-header {
+  padding: 22px 26px;
+  border-bottom: 1px solid rgba(90, 53, 32, 0.14);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-title-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.drawer-title-wrap h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brown);
+}
+
+.drawer-item-count {
+  font-size: 0.85rem;
+  color: var(--brown-soft);
+}
+
+.drawer-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--brown);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.drawer-body {
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cart-product-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(90, 53, 32, 0.12);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.cart-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--brown);
+  margin-bottom: 4px;
+}
+
+.cart-item-color {
+  font-size: 0.82rem;
+  color: var(--brown-soft);
+  margin-bottom: 8px;
+}
+
+.cart-item-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.item-price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brown);
+}
+
+.item-old-price {
+  font-size: 0.85rem;
+  color: var(--brown-soft);
+  text-decoration: line-through;
+}
+
+.order-summary-box {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(90, 53, 32, 0.12);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--brown-soft);
+}
+
+.summary-line strong {
+  color: var(--brown);
+}
+
+.summary-total-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 12px;
+  border-top: 1px solid rgba(90, 53, 32, 0.15);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--brown);
+}
+
+.summary-total-line strong {
+  font-size: 1.3rem;
+  color: var(--brown);
+}
+
+.coupon-box {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(90, 53, 32, 0.12);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-footer {
+  padding: 20px 24px 28px;
+  border-top: 1px solid rgba(90, 53, 32, 0.14);
+}
+
+.drawer-footer .btn-pick-order {
+  padding: 15px;
+  font-size: 1rem;
+}
+
+.secure-guarantee {
+  font-size: 0.75rem;
+  color: var(--brown-soft);
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* =====================================================================
+   7. FOOTER
+   ===================================================================== */
+.foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 2rem clamp(1.4rem, 5vw, 4rem);
+  border-top: 1px solid rgba(90, 53, 32, 0.15);
+  font-size: 0.88rem;
+  color: var(--brown-soft);
+  background: var(--cream);
+}
+
+.foot__logo {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--brown);
+}
+
+/* =====================================================================
+   8. INTERACTIVE BUY NOW BUTTON OVERLAYS
+   ===================================================================== */
+.tc-interactive-overlay {
+  position: absolute;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.tc-interactive-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.btn-tc-buy-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: #1b1410;
+  color: #ffffff;
+  font-family: var(--font);
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(27, 20, 16, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  outline: none;
+}
+
+.btn-tc-buy-trigger:hover {
+  background: var(--brown);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 22px rgba(90, 53, 32, 0.45);
+}
+
+.btn-tc-buy-trigger .btn-tc-arrow {
+  font-size: 0.95rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-tc-buy-trigger:hover .btn-tc-arrow {
+  transform: translateX(3px);
+}
+
+.tr-buy-trigger {
+  position: absolute;
+  z-index: 50;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 24px;
+}
+
+.tr-buy-trigger:hover {
+  box-shadow: 0 0 16px rgba(232, 145, 63, 0.6);
+}
+
+/* =====================================================================
+   9. RESPONSIVE BREAKPOINTS (Mobile, Tablet, Desktop)
+   ===================================================================== */
+@media (max-width: 900px) {
+  .audira-nav-center {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .picks {
+    padding: clamp(3rem, 6vw, 4.5rem) 1.2rem clamp(3rem, 6vw, 5rem);
+  }
+  .picks__grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+    max-width: 380px;
+  }
+  .pick--main {
+    transform: none;
+  }
+  .pick--main:hover {
+    transform: translateY(-6px);
+  }
+  .switch-strip-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .btn-switch-page {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 680px) {
+  .audira-header {
+    height: 62px;
+  }
+  .audira-nav-container {
+    padding: 0 16px;
+  }
+  .noise-wordmark {
+    font-size: 1.4rem;
+  }
+  .mpt-nav-badge {
+    display: none;
+  }
+  .btn-back-store-audira {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+  }
+  .btn-back-store-audira span:not(.back-arrow) {
+    display: none;
+  }
+  .cart-btn-audira {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-drawer {
+    width: 100vw;
+    max-width: 100vw;
+    border-left: none;
+  }
+  .picks__title {
+    font-size: 2.2rem;
+  }
+  .pick {
+    padding: 24px 18px;
+  }
+  .pick__price {
+    font-size: 1.25rem;
+  }
+  .masterpiece-page-switch-strip {
+    padding: 40px 18px;
+  }
+  .switch-strip-title {
+    font-size: 1.8rem;
+  }
+}

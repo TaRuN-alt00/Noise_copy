@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noise Master Watch — 3D Teardown Experience</title>
+  <meta name="description" content="A scroll-driven teardown of the Noise Master Smartwatch, part by part.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader__count"><span id="loaderNum">0</span><small>%</small></div>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <p class="loader__text">Loading 240 Teardown Frames</p>
+  </div>
+
+  <header class="top">
+    <a class="top__brand" href="../index.html" style="font-family: 'Inter', sans-serif; font-weight: 800; letter-spacing: -0.04em;">noise</a>
+    <a class="top__cta" href="../masterpiece.html">Explore Masterpiece →</a>
+  </header>
+
+  <!-- Scroll track: tall element, canvas sticks inside it -->
+  <main class="track" id="track">
+    <div class="stage">
+      <canvas id="stage" aria-label="Smartwatch taking itself apart as you scroll" role="img"></canvas>
+      <div class="vignette"></div>
+
+      <!-- Chapters: each one fades in/out based on scroll progress -->
+      <section class="chapter chapter--hero" data-start="0" data-end="0.14" data-hold="1">
+        <h1>Open it up.</h1>
+        <p>Forged in aerospace-grade titanium with sapphire crystal glass and advanced neural telemetry.</p>
+      </section>
+
+      <section class="chapter chapter--left" data-start="0.22" data-end="0.37">
+        <h2 style="font-size:clamp(2rem, 4vw, 3.4rem);">Glass and display</h2>
+        <p>Scratch-resistant sapphire glass over a bright 1,000-nit AMOLED panel. It lifts off first, so you can see what sits underneath.</p>
+      </section>
+
+      <section class="chapter chapter--right" data-start="0.38" data-end="0.51">
+        <h2 style="font-size:clamp(2rem, 4vw, 3.4rem);">Noise Core V.2</h2>
+        <p>The neural silicon processor runs every biometric sensor and watch face at once, and still sips minimal battery.</p>
+      </section>
+
+      <section class="chapter chapter--left" data-start="0.52" data-end="0.65">
+        <h2 style="font-size:clamp(2rem, 4vw, 3.4rem);">450 mAh battery</h2>
+        <p>A custom-contoured lithium-ion cell sized to fit the case with zero wasted space. Built for 7 days between magnetic charges.</p>
+      </section>
+
+      <section class="chapter chapter--right" data-start="0.66" data-end="0.78">
+        <h2 style="font-size:clamp(2rem, 4vw, 3.4rem);">Optical sensor</h2>
+        <p>Continuous heart rate, SpO₂ blood oxygen and sleep tracking read from the back of the case, right against your skin.</p>
+      </section>
+
+      <section class="chapter chapter--final" data-start="0.85" data-end="1" data-hold="1" id="buy">
+        <h2>Back together, and running.</h2>
+        <p>Every part you just saw, unified in aerospace alloy. Ready for every moment of your day.</p>
+        <a class="btn" href="../masterpiece.html">Pre-Order Noise Watch — ₹6,999</a>
+      </section>
+
+      <div class="rail" aria-hidden="true"><i id="railFill"></i></div>
+      <div class="hint" id="hint">Scroll to explore</div>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+Title: ['GSAP Scroll Animation for Modern Websites 🚀 | ScrollTrigger + Smooth Scroll #gsap #scrolltrigger - YouTube']
+OG Title: ['GSAP Scroll Animation for Modern Websites 🚀 | ScrollTrigger + Smooth Scroll #gsap #scrolltrigger']
+OG Desc: ['Stunning Animated website.Watch how I use GSAP ScrollTrigger &amp; ScrollSmoother to create stunning scroll animations on a modern website. Perfect for web desig...']
+Keyword gsap: 47
+Keyword three: 0
+Keyword canvas: 6
+Keyword spline: 0
+Keyword headphone: 2
+Keyword scroll: 163
+Keyword animation: 62
+Keyword apple: 16
+Keyword website: 44
+Keyword developer: 9
+Keyword design: 27
+Keyword react: 15
+Keyword css: 109

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Noise Core One | The Masterpiece Experience</title>
+  <meta name="description" content="Discover the Noise Core One Smartwatch Masterpiece. Experience the 240-frame interactive teardown: Sapphire Glass, AMOLED Display, Core V.2 Silicon, and 450 mAh Battery.">
+  
+  <!-- Exact Fonts: Inter + Instrument Serif + Hanken Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- GSAP + ScrollTrigger + Lenis for 60fps Scroll Experience -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  
+  <!-- Confetti CDN for Checkout -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="noise-body masterpiece-page is-loading">
+
+  <!-- Preloader for 240 frames -->
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader__count"><span id="loaderNum">0</span><small>%</small></div>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <p class="loader__text">Loading Core One Teardown</p>
+  </div>
+
+  <!-- Masterpiece Floating Minimal Navbar -->
+  <header class="masterpiece-header">
+    <div class="mpt-nav-container">
+      <div class="mpt-nav-left">
+        <a href="index.html" class="noise-brand-logo" aria-label="Back to Store">
+          <span class="noise-wordmark">noise</span>
+        </a>
+        <div class="mpt-nav-badge">
+          <span class="badge-dot"></span>
+          <span>MASTERPIECE // CORE ONE</span>
+        </div>
+      </div>
+
+      <div class="mpt-nav-center">
+        <div class="mpt-page-switcher">
+          <a href="masterpiece.html" class="switcher-pill-btn active" title="Page 1: Noise Core One Watch">
+            <span class="tab-idx">01</span>
+            <span>Core One Watch</span>
+          </a>
+          <a href="masterpiece-2.html" class="switcher-pill-btn" title="Page 2: Audira Headphones">
+            <span class="tab-idx">02</span>
+            <span>Audira Headphones</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mpt-nav-right">
+        <a href="index.html" class="btn-back-store">
+          <span class="back-arrow">←</span>
+          <span>Back to Store</span>
+        </a>
+
+        <!-- Cart Bag with Live Counter Badge -->
+        <button class="nav-icon-btn cart-btn" id="open-cart-btn" aria-label="Cart" title="Shopping Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge" id="cart-counter">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       240-FRAME GSAP + LENIS SMARTWATCH TEARDOWN EXPERIENCE
+       Canvas Frame Sequence driven by Scroll progress
+       ===================================================================== -->
+  <main class="track" id="track">
+    <div class="stage">
+      <canvas id="stage" aria-label="Smartwatch taking itself apart as you scroll" role="img"></canvas>
+      <div class="vignette"></div>
+
+      <!-- Chapter 0: Hero -->
+      <section class="chapter chapter--hero" data-start="0" data-end="0.14" data-hold="1">
+        <h1>Open it up.</h1>
+        <p>Forged in aerospace-grade titanium with sapphire crystal glass and advanced neural telemetry.</p>
+      </section>
+
+      <!-- Chapter 1: Display -->
+      <section class="chapter chapter--left" data-start="0.22" data-end="0.37">
+        <h2>Glass & Display</h2>
+        <p>Scratch-resistant sapphire crystal over a 1,000-nit AMOLED retina display. Engineered for brilliant outdoor clarity.</p>
+      </section>
+
+      <!-- Chapter 2: Silicon Core -->
+      <section class="chapter chapter--right" data-start="0.38" data-end="0.51">
+        <h2>Noise Core V.2</h2>
+        <p>Dual-engine neural architecture powers continuous telemetry, fluid 60Hz animations, and intelligent power efficiency.</p>
+      </section>
+
+      <!-- Chapter 3: Battery -->
+      <section class="chapter chapter--left" data-start="0.52" data-end="0.65">
+        <h2>450 mAh Battery</h2>
+        <p>High-density lithium-ion cell custom-contoured to eliminate wasted space. Up to 7 days of active endurance on a single charge.</p>
+      </section>
+
+      <!-- Chapter 4: Sensor -->
+      <section class="chapter chapter--right" data-start="0.66" data-end="0.78">
+        <h2>Biometric Matrix</h2>
+        <p>Hexa-cluster optical PPG sensors capture continuous heart rate, SpO₂ blood oxygen, and sleep tracking right against your skin.</p>
+      </section>
+
+      <!-- Chapter 5: Reassembled Final -->
+      <section class="chapter chapter--final" data-start="0.85" data-end="1" data-hold="1" id="buy">
+        <h2>Reassembled & Ready.</h2>
+        <p>Every precision component unified in a 5ATM water-resistant titanium case. Built for your everyday performance.</p>
+        <button class="btn-noise-pill btn-mpt-buy-now btn" id="mpt-scroll-cta">
+          <span>Explore & Pre-order — ₹6,999</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </section>
+
+      <!-- Interactive Indicators -->
+      <div class="rail" aria-hidden="true"><i id="railFill"></i></div>
+      <div class="hint" id="hint">Scroll to explore</div>
+    </div>
+  </main>
+
+  <!-- =====================================================================
+       YOUR NUMBERS — LUXURY METRIC SHOWCASE (AS SEEN IN PIC 2)
+       Clean, borderless horizontal rows with huge Instrument Serif numbers
+       Continuous deep smoky background (#060a0c) matching the 3D animation
+       ===================================================================== -->
+  <section class="master-numbers-section">
+    <div class="numbers-container">
+      
+      <!-- Section Header matching Pic 2 -->
+      <div class="metrics-header">
+        <h2 class="metrics-title">Your numbers</h2>
+        <p class="metrics-subtitle">Live from the optical sensor on the back of the case.</p>
+      </div>
+
+      <!-- Minimalist Metric Rows matching Pic 2 -->
+      <div class="metrics-list">
+        
+        <div class="metric-row">
+          <span class="metric-label">Heart rate</span>
+          <div class="metric-value-wrap">
+            <span class="metric-number">70</span>
+            <span class="metric-unit">bpm</span>
+          </div>
+        </div>
+
+        <div class="metric-row">
+          <span class="metric-label">Blood oxygen</span>
+          <div class="metric-value-wrap">
+            <span class="metric-number">99</span>
+            <span class="metric-unit">%</span>
+          </div>
+        </div>
+
+        <div class="metric-row">
+          <span class="metric-label">Last night’s sleep</span>
+          <div class="metric-value-wrap">
+            <span class="metric-number">8<small class="metric-sub-unit">h</small> 14</span>
+            <span class="metric-unit">min</span>
+          </div>
+        </div>
+
+        <div class="metric-row">
+          <span class="metric-label">Battery endurance</span>
+          <div class="metric-value-wrap">
+            <span class="metric-number">7</span>
+            <span class="metric-unit">days</span>
+          </div>
+        </div>
+
+        <div class="metric-row">
+          <span class="metric-label">Water resistance</span>
+          <div class="metric-value-wrap">
+            <span class="metric-number">50</span>
+            <span class="metric-unit">m</span>
+          </div>
+        </div>
+
+        <div class="metric-row">
+          <span class="metric-label">Retina AMOLED display</span>
+          <div class="metric-value-wrap">
+            <span class="metric-number">1.96</span>
+            <span class="metric-unit">"</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Clean Bespoke Finishes Row (Minimalist, no bulky cards) -->
+      <div class="finishes-strip">
+        <div class="finish-text">
+          <span class="finish-title">Bespoke Finish</span>
+          <span class="finish-active-name" id="drawer-selected-badge">Obsidian Titanium</span>
+        </div>
+        <div class="finish-chips">
+          <button class="finish-chip-btn active" data-color="Obsidian Titanium" style="background: #15181c;" title="Obsidian Titanium" aria-label="Obsidian Titanium"></button>
+          <button class="finish-chip-btn" data-color="Starlight Gold" style="background: #d4af37;" title="Starlight Gold" aria-label="Starlight Gold"></button>
+          <button class="finish-chip-btn" data-color="Titanium Slate" style="background: #242930;" title="Titanium Slate" aria-label="Titanium Slate"></button>
+          <button class="finish-chip-btn" data-color="Lunar Silver" style="background: #b0b5be;" title="Lunar Silver" aria-label="Lunar Silver"></button>
+        </div>
+      </div>
+
+      <!-- Clean Pre-Order Checkout Row (Minimalist, no bulky box) -->
+      <div class="minimal-checkout-bar">
+        <div class="chk-summary">
+          <h3 class="chk-product-title">Noise Master Series</h3>
+          <p class="chk-product-desc">Aerospace titanium case • 2 bespoke straps • 1-year brand warranty</p>
+        </div>
+        <div class="chk-purchase-action">
+          <div class="chk-price-tag">
+            <span class="price-actual">₹6,999</span>
+            <span class="price-mrp">₹12,999</span>
+          </div>
+          <button class="btn-clean-order" id="mpt-checkout-trigger">
+            <span>Pre-Order Now</span>
+            <span class="btn-arrow-clean">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Page 2 Switcher Banner -->
+      <div class="mpt-next-edition-strip">
+        <div class="mpt-next-info">
+          <span class="mpt-next-tag">PAGE 2 // MASTERPIECE 02</span>
+          <h3 class="mpt-next-title">Audira — Modern Harmony</h3>
+          <p class="mpt-next-desc">Experience our 196-frame flagship planar-magnetic acoustic scrollytelling journey.</p>
+        </div>
+        <a href="masterpiece-2.html" class="btn-mpt-next-page">
+          <span>Explore Page 2: Audira</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Slide-in Shopping Bag Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer" id="cart-drawer">
+      <div class="drawer-header">
+        <div class="drawer-title-wrap">
+          <h3>Shopping Bag</h3>
+          <span class="drawer-item-count">(1 item)</span>
+        </div>
+        <button class="drawer-close-btn" id="close-cart-btn">&times;</button>
+      </div>
+
+      <div class="drawer-body">
+        <div class="cart-product-item" id="cart-item-watch">
+          <img src="assets/smartwatch.jpg" alt="Noise Core One" class="cart-item-img">
+          <div class="cart-item-details">
+            <h4 class="cart-item-title" id="cart-item-title">Noise Core One // Masterpiece Smartwatch</h4>
+            <p class="cart-item-color" id="drawer-item-color">Launch Edition • Obsidian Titanium</p>
+            <div class="cart-item-price-row">
+              <span class="item-price" id="cart-item-price">₹6,999</span>
+              <span class="item-old-price">₹12,999</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-summary-box">
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <strong id="summary-subtotal">₹6,999</strong>
+          </div>
+          <div class="summary-line">
+            <span>VIP Launch Voucher (NOISEVIP500)</span>
+            <span class="text-green">-₹500</span>
+          </div>
+          <div class="summary-line">
+            <span>Express Shipping (Priority Air)</span>
+            <span class="text-green">FREE</span>
+          </div>
+          <div class="summary-total-line">
+            <span>Total Payable</span>
+            <strong id="summary-final-price">₹6,499</strong>
+          </div>
+        </div>
+
+        <div class="coupon-box" style="margin-top: 1rem; padding: 10px 14px; background: rgba(255,255,255,0.04); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.85rem; color: #8fa3ab;">Coupon: <strong>NOISEVIP500</strong></span>
+          <span style="font-size: 0.75rem; color: #4ade80; background: rgba(74,222,128,0.1); padding: 3px 8px; border-radius: 4px;">Applied</span>
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        <button class="btn-noise-checkout" id="checkout-btn">
+          <span>Complete Secure Checkout</span>
+          <span class="btn-arrow">→</span>
+        </button>
+        <div class="secure-guarantee" style="font-size: 0.75rem; color: #8fa3ab; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+          <span>🔒 End-to-End Encrypted UPI / NetBanking / Cards</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="audio.js"></script>
+  <script src="launch-experience.js"></script>
+  <script src="app.js"></script>
+
+  <script>
+    // Bind Masterpiece direct checkout triggers to open cart drawer with confetti
+    document.addEventListener('DOMContentLoaded', () => {
+      const openCart = () => {
+        const cartOverlay = document.getElementById('cart-drawer-overlay');
+        if (cartOverlay) cartOverlay.classList.add('active');
+        if (typeof confetti === 'function') {
+          confetti({ particleCount: 90, spread: 75, origin: { y: 0.6 } });
+        }
+      };
+
+      const mptTrigger = document.getElementById('mpt-checkout-trigger');
+      if (mptTrigger) mptTrigger.addEventListener('click', openCart);
+
+      const scrollCta = document.getElementById('mpt-scroll-cta');
+      if (scrollCta) scrollCta.addEventListener('click', openCart);
+
+      const openCartBtn = document.getElementById('open-cart-btn');
+      if (openCartBtn) openCartBtn.addEventListener('click', () => {
+        const cartOverlay = document.getElementById('cart-drawer-overlay');
+        if (cartOverlay) cartOverlay.classList.add('active');
+      });
+
+      const closeCartBtn = document.getElementById('close-cart-btn');
+      if (closeCartBtn) closeCartBtn.addEventListener('click', () => {
+        const cartOverlay = document.getElementById('cart-drawer-overlay');
+        if (cartOverlay) cartOverlay.classList.remove('active');
+      });
+
+      // Color chips switcher
+      const chips = document.querySelectorAll('.finish-chip-btn');
+      const badge = document.getElementById('drawer-selected-badge');
+      const drawerColor = document.getElementById('drawer-item-color');
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const title = chip.getAttribute('data-color') || chip.getAttribute('title');
+          if (badge) badge.textContent = title;
+          if (drawerColor) drawerColor.textContent = 'Launch Edition • ' + title;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
