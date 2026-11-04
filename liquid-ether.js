@@ -243,7 +243,9 @@
     var autoRampDuration = options.autoRampDuration !== undefined ? options.autoRampDuration : 0.6;
 
     var paletteTex = makePaletteTexture(colors);
-    var bgVec4 = new THREE.Vector4(0, 0, 0, 0);
+    var bgVec4 = options.bgColor
+      ? new THREE.Vector4(options.bgColor[0], options.bgColor[1], options.bgColor[2], options.bgColor[3])
+      : new THREE.Vector4(0, 0, 0, 0);
 
     // Common renderer setup
     var Common = {

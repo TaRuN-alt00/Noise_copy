@@ -587,26 +587,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 10. Liquid Ether Fluid Dynamics WebGL Simulation (Hero Card Option 2)
+  // 10. White Ether Navier-Stokes WebGL Simulation (Full-Page White Stage Background)
+  // Luminous white ether fluid ripples across the page background without affecting products
   // =========================================================================
-  const heroEtherContainer = document.getElementById('hero-liquid-ether');
-  if (heroEtherContainer && typeof LiquidEther === 'function' && typeof THREE !== 'undefined' && !prefersReducedMotion) {
+  const whiteEtherContainer = document.getElementById('page-white-ether');
+  if (whiteEtherContainer && typeof LiquidEther === 'function' && typeof THREE !== 'undefined' && !prefersReducedMotion) {
     try {
-      const etherSim = LiquidEther(heroEtherContainer, {
-        colors: ['#5227FF', '#FF6FA5', '#B19EEF', '#00F0FF'],
-        mouseForce: 28,
-        cursorSize: 125,
+      const whiteEtherSim = LiquidEther(whiteEtherContainer, {
+        colors: ['#ffffff', '#e8edf5', '#cbd5e1', '#b0c4de', '#8fa3bf'],
+        mouseForce: 30,
+        cursorSize: 140,
         resolution: 0.65,
         BFECC: true,
         autoDemo: true,
-        autoSpeed: 0.55,
-        autoIntensity: 2.2,
-        autoResumeDelay: 1200,
+        autoSpeed: 0.45,
+        autoIntensity: 2.5,
+        autoResumeDelay: 1500,
         isViscous: false
       });
-      window._liquidEtherSim = etherSim;
+      window._whiteEtherSim = whiteEtherSim;
     } catch (err) {
-      console.warn('LiquidEther WebGL init fallback:', err);
+      console.warn('White Ether WebGL init fallback:', err);
     }
   }
 

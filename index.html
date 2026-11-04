@@ -218,9 +218,6 @@
     <div class="hero-stage-wrapper">
       <div class="hero-curved-card" id="hero-curved-card">
         
-        <!-- Interactive Liquid Ether Fluid Simulation Background (WebGL Navier-Stokes) -->
-        <div class="hero-liquid-ether-canvas" id="hero-liquid-ether" aria-hidden="true"></div>
-
         <!-- White Scroll Transition Overlay (Opacity 0 -> 1 on scroll) -->
         <div class="hero-scroll-white-overlay" id="hero-scroll-overlay"></div>
 
@@ -339,8 +336,16 @@
     </div>
   </section>
 
-  <!-- 4. Section: Explore by Category (Pure White Background - Screenshot 2) -->
-  <section class="store-section white-bg" id="categories">
+  <!-- =====================================================================
+       4-7. STORE WHITE STAGE (With Full-Page White Ether Fluid Dynamics Background)
+       ===================================================================== -->
+  <main class="store-white-stage" id="store-white-stage">
+    
+    <!-- White Ether Ambient WebGL Fluid Simulation Background -->
+    <div class="store-white-ether-canvas" id="page-white-ether" aria-hidden="true"></div>
+
+    <!-- 4. Section: Explore by Category (Pure White Background - Screenshot 2) -->
+    <section class="store-section white-bg" id="categories">
     <div class="store-container">
       <div class="section-title-row">
         <h2 class="store-section-title">Explore by Category</h2>
@@ -734,6 +739,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- 8. Real Noise Footer (Pure Black - Screenshot 4) -->
   <footer class="noise-real-footer">
