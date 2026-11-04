@@ -415,6 +415,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const megaMenu = document.getElementById('smartwatch-mega-menu');
 
   if (swLink && swDropdown) {
+    let leaveTimeout = null;
+
+    const showMenu = () => {
+      if (leaveTimeout) clearTimeout(leaveTimeout);
+      swDropdown.classList.add('active');
+    };
+
+    const hideMenu = () => {
+      leaveTimeout = setTimeout(() => {
+        swDropdown.classList.remove('active');
+      }, 220);
+    };
+
+    swLink.addEventListener('mouseenter', showMenu);
+    swLink.addEventListener('mouseleave', hideMenu);
+
+    if (megaMenu) {
+      megaMenu.addEventListener('mouseenter', showMenu);
+      megaMenu.addEventListener('mouseleave', hideMenu);
+
+      megaMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (leaveTimeout) clearTimeout(leaveTimeout);
+          swDropdown.classList.remove('active');
+        });
+      });
+    }
+
     swLink.addEventListener('click', (e) => {
       e.preventDefault();
       swDropdown.classList.toggle('active');
@@ -425,14 +453,6 @@ document.addEventListener('DOMContentLoaded', () => {
         swDropdown.classList.remove('active');
       }
     });
-
-    if (megaMenu) {
-      megaMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          swDropdown.classList.remove('active');
-        });
-      });
-    }
   }
 
   // Initial cart render on page load
