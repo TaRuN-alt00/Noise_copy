@@ -363,11 +363,11 @@ document.addEventListener('DOMContentLoaded', () => {
     showToast(`Added ${product.name} to your Bag!`);
   }
 
-  // Add to Cart buttons in Product Grid
-  const addCartBtns = document.querySelectorAll('.btn-add-cart');
+  // Add to Cart buttons in Product Grid & Festive Campaign
+  const addCartBtns = document.querySelectorAll('.btn-add-cart, .btn-festive-buy');
   addCartBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const card = btn.closest('.noise-product-card') || btn.closest('.master-feature-card');
+      const card = btn.closest('.noise-product-card') || btn.closest('.festive-product-card') || btn.closest('.master-feature-card');
       let name = btn.getAttribute('data-name');
       let price = btn.getAttribute('data-price');
       let mrp = btn.getAttribute('data-mrp');
@@ -377,11 +377,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (card) {
         if (!name) {
-          const titleEl = card.querySelector('.product-card-title, .master-feature-title');
+          const titleEl = card.querySelector('.product-card-title, .festive-card-title, .master-feature-title');
           if (titleEl) name = titleEl.textContent.trim().replace(/\s+/g, ' ');
         }
         if (!price) {
-          const priceEl = card.querySelector('.prod-price, .mf-price');
+          const priceEl = card.querySelector('.prod-price, .festive-card-offer strong, .mf-price');
           if (priceEl) price = priceEl.textContent.replace(/[^0-9]/g, '');
         }
         if (!mrp) {
@@ -389,11 +389,11 @@ document.addEventListener('DOMContentLoaded', () => {
           if (mrpEl) mrp = mrpEl.textContent.replace(/[^0-9]/g, '');
         }
         if (!img) {
-          const imgEl = card.querySelector('img.product-thumb, img.master-hero-img');
+          const imgEl = card.querySelector('img.product-thumb, img.festive-card-img, img.master-hero-img');
           if (imgEl) img = imgEl.getAttribute('src');
         }
         if (!spec) {
-          const specEl = card.querySelector('.product-card-spec');
+          const specEl = card.querySelector('.product-card-spec, .festive-card-offer');
           if (specEl) spec = specEl.textContent.trim();
         }
       }
@@ -408,6 +408,32 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  // Smart Watches Mega Menu Dropdown Interactions
+  const swDropdown = document.getElementById('nav-smartwatches-dropdown');
+  const swLink = document.getElementById('nav-smartwatches-link');
+  const megaMenu = document.getElementById('smartwatch-mega-menu');
+
+  if (swLink && swDropdown) {
+    swLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      swDropdown.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!swDropdown.contains(e.target)) {
+        swDropdown.classList.remove('active');
+      }
+    });
+
+    if (megaMenu) {
+      megaMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          swDropdown.classList.remove('active');
+        });
+      });
+    }
+  }
 
   // Initial cart render on page load
   renderCart();

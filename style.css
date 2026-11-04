@@ -3600,3 +3600,315 @@ body.is-loading { overflow: hidden; height: 100vh; }
       linear-gradient(to top, rgba(6,10,12,.95), transparent 48%);
   }
 }
+
+/* ==========================================================================
+   Smart Watches Mega Menu Dropdown (Screenshot 1 Reference)
+   ========================================================================== */
+.nav-item-dropdown {
+  position: relative;
+}
+
+.smartwatch-mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(14px);
+  width: min(94vw, 1160px);
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.35), 0 0 1px 1px rgba(0, 0, 0, 0.08);
+  padding: 34px 44px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.24s cubic-bezier(.16, 1, .3, 1), transform 0.24s cubic-bezier(.16, 1, .3, 1), visibility 0.24s;
+  z-index: 1000;
+  text-align: left;
+}
+
+/* Hover & Active show */
+.nav-item-dropdown:hover .smartwatch-mega-menu,
+.nav-item-dropdown.active .smartwatch-mega-menu,
+.smartwatch-mega-menu:hover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.mega-menu-title {
+  font-family: var(--font-main);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.mega-menu-body {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.mega-nav-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 40px;
+}
+
+.mega-nav-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.mega-group-title {
+  font-family: var(--font-main);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #000000;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.mega-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mega-item-link {
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #334155;
+  text-decoration: none;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 4px;
+  display: inline-block;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.mega-item-link:hover {
+  color: var(--color-orange);
+  transform: translateX(4px);
+}
+
+.mega-category-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.mega-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.mega-cat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.mega-cat-img-box {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #ededed;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mega-cat-card:hover .mega-cat-img-box {
+  background: #e2e8f0;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.12);
+}
+
+.mega-cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mega-cat-name {
+  font-family: var(--font-main);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Festive Diwali Campaign Section (Screenshots 4 & 5 Reference)
+   ========================================================================== */
+.festive-campaign-section {
+  padding: 70px 0 90px;
+  background: #ffffff;
+}
+
+.festive-hero-card {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
+  background: #fbf6ec;
+}
+
+.festive-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 480px;
+}
+
+.festive-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.festive-section-title {
+  font-family: var(--font-main);
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.festive-section-sub {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.festive-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.festive-product-card {
+  background: #fdfaf5;
+  border: 1px solid #f1e4d0;
+  border-radius: 18px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.festive-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px -5px rgba(200, 122, 42, 0.18);
+  border-color: #c87a2a;
+}
+
+.festive-card-header {
+  margin-bottom: 16px;
+}
+
+.festive-card-title {
+  font-family: var(--font-main);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #78350f;
+  margin-bottom: 4px;
+}
+
+.festive-card-offer {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #92400e;
+}
+
+.festive-card-offer.highlight-offer strong {
+  color: #b45309;
+}
+
+.festive-card-visual {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.festive-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.festive-product-card:hover .festive-card-img {
+  transform: scale(1.04);
+}
+
+.festive-card-footer {
+  width: 100%;
+}
+
+.btn-festive-buy {
+  width: 100%;
+  max-width: 200px;
+  background: #c87a2a;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(200, 122, 42, 0.25);
+}
+
+.btn-festive-buy:hover {
+  background: #ab641d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(200, 122, 42, 0.35);
+}
+
+@media (max-width: 992px) {
+  .smartwatch-mega-menu {
+    width: 96vw;
+    padding: 24px;
+  }
+  .mega-menu-body {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .festive-products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
