@@ -204,7 +204,7 @@
         </div>
       </nav>
 
-      <!-- Right Action Icons (White Outline: Search, Wishlist, User, Cart, Mobile Toggle) -->
+      <!-- Right Action Icons (White Outline: Search, Wishlist, User, Cart, 3-Dots Button) -->
       <div class="nav-actions">
         <button class="nav-icon-btn" id="open-search-btn" aria-label="Search" title="Search Noise">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -236,6 +236,15 @@
           <span class="cart-count-badge" id="cart-counter" style="display: none;">0</span>
         </button>
 
+        <!-- 3-Dots Menu Button (Exact User Request) -->
+        <button class="nav-icon-btn three-dots-btn" id="three-dots-btn" aria-label="More Navigation Options" title="Navigation Options">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <circle cx="12" cy="5" r="2.2"></circle>
+            <circle cx="12" cy="12" r="2.2"></circle>
+            <circle cx="12" cy="19" r="2.2"></circle>
+          </svg>
+        </button>
+
         <!-- Mobile Hamburger Menu Button -->
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
           <span class="hamburger-line"></span>
@@ -243,38 +252,50 @@
           <span class="hamburger-line"></span>
         </button>
       </div>
+
+      <!-- 3-Dots Dropdown Popover (Exact User Request) -->
+      <div class="three-dots-popover" id="three-dots-popover" role="menu">
+        <div class="three-dots-popover-inner">
+          <div class="popover-item">
+            <a href="masterpiece.html" class="popover-main-link">👑 Master Series</a>
+            <div class="popover-sub-links">
+              <a href="masterpiece.html" class="popover-sub-link">01 // Noise Core One Watch</a>
+              <a href="masterpiece-2.html" class="popover-sub-link">02 // Audira Modern Harmony</a>
+              <a href="masterpiece-3.html" class="popover-sub-link">03 // Mochi Pastel Cute ✨</a>
+            </div>
+          </div>
+          <div class="popover-item">
+            <a href="#categories" class="popover-main-link">⌚ Smart Watches</a>
+            <div class="popover-sub-links">
+              <a href="#festive-campaign-section" class="popover-sub-link">All Smart Watches</a>
+              <a href="#categories" class="popover-sub-link">Shop by Category</a>
+              <a href="#top-picks" class="popover-sub-link">Halo 2 & ColorFit</a>
+            </div>
+          </div>
+          <div class="popover-item">
+            <a href="#top-picks" class="popover-main-link">🎧 Earbuds & Headphones</a>
+            <div class="popover-sub-links">
+              <a href="#top-picks" class="popover-sub-link">Master Buds Open</a>
+              <a href="#festive-campaign-section" class="popover-sub-link">Noise Buds VS102 Plus</a>
+              <a href="masterpiece-2.html" class="popover-sub-link">Audira Studio Series</a>
+              <a href="masterpiece-3.html" class="popover-sub-link">Mochi Pastel Series</a>
+            </div>
+          </div>
+          <div class="popover-item">
+            <a href="#hero-stage-section" class="popover-main-link">🔊 Home Audio</a>
+            <div class="popover-sub-links">
+              <a href="#hero-stage-section" class="popover-sub-link">Studio Pro Monitors Duo</a>
+              <a href="#hero-stage-section" class="popover-sub-link">Homestage Dolby Atmos</a>
+            </div>
+          </div>
+          <div class="popover-item">
+            <a href="#categories" class="popover-main-link">⚡ Power Series</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </header>
-
-  <!-- Mobile Category Quick-Nav Pill Strip (Visible on mobile <= 900px) -->
-  <div class="mobile-category-pill-strip" id="mobile-category-strip">
-    <div class="mobile-pills-scroll">
-      <button class="mobile-pill mobile-pill-accent" id="btn-quick-open-drawer">
-        <span>👑 Master Series ▾</span>
-      </button>
-      <a href="#categories" class="mobile-pill">
-        <span>⌚ Smart Watches</span>
-      </a>
-      <a href="#top-picks" class="mobile-pill">
-        <span>🎧 Earbuds</span>
-      </a>
-      <a href="#categories" class="mobile-pill">
-        <span>🔊 Audio</span>
-      </a>
-      <a href="masterpiece.html" class="mobile-pill">
-        <span>01 Core One</span>
-      </a>
-      <a href="masterpiece-2.html" class="mobile-pill">
-        <span>02 Audira</span>
-      </a>
-      <a href="masterpiece-3.html" class="mobile-pill">
-        <span>03 Mochi ✨</span>
-      </a>
-      <a href="#festive-campaign-section" class="mobile-pill">
-        <span>🎁 Offers</span>
-      </a>
-    </div>
-  </div>
 
   <!-- Full-Page Liquid Ether Navier-Stokes WebGL Fluid Dynamics Simulation Background -->
   <div class="main-page-liquid-ether" id="main-liquid-ether" aria-hidden="true"></div>

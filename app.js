@@ -680,6 +680,43 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
+  // 11b. 3-Dots Menu Popover Toggle (Mobile & Desktop Luxury Navigation Menu)
+  // =========================================================================
+  const threeDotsBtn = document.getElementById('three-dots-btn');
+  const threeDotsPopover = document.getElementById('three-dots-popover');
+
+  if (threeDotsBtn && threeDotsPopover) {
+    threeDotsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      threeDotsPopover.classList.toggle('active');
+      if (window.noiseAudio) window.noiseAudio.playUiClick();
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!threeDotsPopover.contains(e.target) && e.target !== threeDotsBtn) {
+        threeDotsPopover.classList.remove('active');
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && threeDotsPopover.classList.contains('active')) {
+        threeDotsPopover.classList.remove('active');
+      }
+    });
+
+    // Close popover when any inner link is clicked
+    const popoverLinks = threeDotsPopover.querySelectorAll('a');
+    popoverLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        threeDotsPopover.classList.remove('active');
+        if (window.noiseAudio) window.noiseAudio.playUiClick();
+      });
+    });
+  }
+
+  // =========================================================================
   // 12. Global Interactive Search Modal with Real-Time Filtering
   // =========================================================================
   const searchModalOverlay = document.getElementById('search-modal-overlay');
