@@ -1101,18 +1101,28 @@ details.faq-item[open] .faq-icon-plus::after {
   font-size: 0.85rem;
 }
 
-/* ---------- Responsive Breakpoints (< 768px, < 480px) ---------- */
+/* ---------- Responsive Breakpoints (< 860px, < 600px) ---------- */
 @media (max-width: 860px) {
   .specs-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 20px;
   }
   .specs-right-col {
-    display: none;
+    display: flex;
+    justify-content: center;
+    order: -1;
+  }
+  .spec-photo-frame {
+    max-width: 220px;
+    height: 130px;
+  }
+  .spec-photo-frame img {
+    height: 100%;
+    object-fit: cover;
   }
   .statement-columns-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
   .colourway-row {
     grid-template-columns: 1fr 1fr;
@@ -1129,18 +1139,81 @@ details.faq-item[open] .faq-icon-plus::after {
 
 @media (max-width: 600px) {
   .mochi-header {
-    padding: 12px 16px;
+    padding: 8px 12px;
+    height: 56px;
+  }
+  .mochi-nav-container {
+    padding: 0;
   }
   .mpt-tab-link span:not(.tab-tag) {
     display: none;
   }
+  .mpt-tab-link {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+  }
+  .hero-wordmark {
+    font-size: clamp(2.6rem, 16vw, 4.2rem);
+  }
+  .hero-headphone-img {
+    max-height: 46svh;
+    width: 86vw;
+  }
   .hero-straps-row {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    padding-top: 10px;
+  }
+  .hero-strap {
+    font-size: 9.5px;
+  }
+  .stage-hero .sticky-inner {
+    padding: 66px 14px 14px;
+  }
+  .reveal-headline {
+    font-size: clamp(1.8rem, 6.5vw, 2.8rem);
+  }
+  .reveal-caption-card {
+    left: 12px;
+    right: 12px;
+    bottom: 18px;
+    padding: 10px 14px;
+    justify-content: center;
+    max-width: calc(100vw - 24px);
   }
   .stage-specs .sticky-inner {
-    padding: 70px 20px 20px;
+    padding: 62px 14px 14px;
+  }
+  .specs-main-title {
+    font-size: clamp(1.5rem, 5.5vw, 2.1rem);
+    margin-bottom: 14px;
+  }
+  .spec-row {
+    padding: 9px 0;
+  }
+  .spec-row-name {
+    font-size: 1rem;
+  }
+  .spec-row-val {
+    font-size: 0.9rem;
+  }
+  .statement-container, .colourways-container, .faq-container {
+    padding: 44px 14px;
+  }
+  .statement-headline {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+  .colourways-title {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+  .colourways-table {
+    border-radius: 16px;
+  }
+  .btn-strip-edition {
+    width: 100%;
+    justify-content: center;
   }
 }
 

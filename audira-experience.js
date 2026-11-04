@@ -71,12 +71,10 @@
     const ca = cw / ch;
 
     // Responsive scaling formula:
-    // On portrait mobile (ca < 1.0), scale up so the headphone and text remain large and prominent
+    // On portrait mobile (ca < 1.0), fit within canvas bounds so no text or headphones are cut off
     let scale;
     if (ca < 1.0) {
-      const minWScale = cw / img.naturalWidth;
-      const targetHScale = (ch * 0.65) / img.naturalHeight;
-      scale = Math.max(minWScale, targetHScale);
+      scale = Math.min(cw / img.naturalWidth, ch / img.naturalHeight);
     } else {
       // Landscape / desktop view
       scale = Math.abs(ca - ia) / ia < 0.16

@@ -52,7 +52,33 @@
       <!-- Center Navigation Links (White, 600 weight) -->
       <!-- Center Navigation Links (Clean, Authentic Noise Header - Screenshot 1 Reference) -->
       <nav class="nav-links">
-        <a href="masterpiece.html" class="nav-link">Master Series</a>
+        <!-- Master Series with Dropdown (01 Core One, 02 Audira, 03 Mochi) -->
+        <div class="nav-item-dropdown" id="nav-master-dropdown">
+          <a href="masterpiece.html" class="nav-link">Master Series <span class="nav-caret">▾</span></a>
+          <div class="master-series-dropdown-menu">
+            <a href="masterpiece.html" class="master-drop-item">
+              <span class="drop-num">01</span>
+              <div class="drop-text">
+                <strong>Core One Watch</strong>
+                <small>240-Frame 3D Interactive Teardown</small>
+              </div>
+            </a>
+            <a href="masterpiece-2.html" class="master-drop-item">
+              <span class="drop-num">02</span>
+              <div class="drop-text">
+                <strong>Audira Headphones</strong>
+                <small>196-Frame Planar-Magnetic Acoustics</small>
+              </div>
+            </a>
+            <a href="masterpiece-3.html" class="master-drop-item">
+              <span class="drop-num">03</span>
+              <div class="drop-text">
+                <strong>Mochi Pastel Cute ✨</strong>
+                <small>Soft Editorial Featherlight Sound</small>
+              </div>
+            </a>
+          </div>
+        </div>
         
         <!-- Smart Watches with Interactive Mega Menu (Screenshot 1) -->
         <div class="nav-item-dropdown" id="nav-smartwatches-dropdown">
@@ -178,9 +204,9 @@
         </div>
       </nav>
 
-      <!-- Right Action Icons (White Outline: Search, Wishlist, User, Cart) -->
+      <!-- Right Action Icons (White Outline: Search, Wishlist, User, Cart, Mobile Toggle) -->
       <div class="nav-actions">
-        <button class="nav-icon-btn" aria-label="Search" title="Search Noise">
+        <button class="nav-icon-btn" id="open-search-btn" aria-label="Search" title="Search Noise">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -209,9 +235,46 @@
           </svg>
           <span class="cart-count-badge" id="cart-counter" style="display: none;">0</span>
         </button>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Category Quick-Nav Pill Strip (Visible on mobile <= 900px) -->
+  <div class="mobile-category-pill-strip" id="mobile-category-strip">
+    <div class="mobile-pills-scroll">
+      <button class="mobile-pill mobile-pill-accent" id="btn-quick-open-drawer">
+        <span>👑 Master Series ▾</span>
+      </button>
+      <a href="#categories" class="mobile-pill">
+        <span>⌚ Smart Watches</span>
+      </a>
+      <a href="#top-picks" class="mobile-pill">
+        <span>🎧 Earbuds</span>
+      </a>
+      <a href="#categories" class="mobile-pill">
+        <span>🔊 Audio</span>
+      </a>
+      <a href="masterpiece.html" class="mobile-pill">
+        <span>01 Core One</span>
+      </a>
+      <a href="masterpiece-2.html" class="mobile-pill">
+        <span>02 Audira</span>
+      </a>
+      <a href="masterpiece-3.html" class="mobile-pill">
+        <span>03 Mochi ✨</span>
+      </a>
+      <a href="#festive-campaign-section" class="mobile-pill">
+        <span>🎁 Offers</span>
+      </a>
+    </div>
+  </div>
 
   <!-- Full-Page Liquid Ether Navier-Stokes WebGL Fluid Dynamics Simulation Background -->
   <div class="main-page-liquid-ether" id="main-liquid-ether" aria-hidden="true"></div>
@@ -907,6 +970,129 @@
           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
           <span>End-to-End Encrypted UPI / NetBanking / Cards</span>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. Mobile Navigation Slide-Out Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay">
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <div class="mobile-drawer-header">
+        <span class="noise-wordmark">noise</span>
+        <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close Menu">&times;</button>
+      </div>
+
+      <!-- Mobile Search Input Box inside drawer -->
+      <div class="mobile-drawer-search">
+        <div class="search-input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" placeholder="Search smartwatches, earbuds, audio..." id="drawer-search-input" class="mobile-search-field">
+        </div>
+      </div>
+
+      <div class="mobile-drawer-content">
+        <!-- Section 1: Noise Master Series (3 Editions) -->
+        <div class="mobile-nav-group mobile-mpt-group">
+          <div class="mobile-group-title">
+            <span>👑 NOISE MASTER SERIES</span>
+            <span class="badge-new">3 Flagships</span>
+          </div>
+          <div class="mobile-mpt-list">
+            <a href="masterpiece.html" class="mobile-mpt-card">
+              <span class="mpt-card-tag">01 // WATCH</span>
+              <div class="mpt-card-title">Noise Core One</div>
+              <p class="mpt-card-sub">240-Frame Interactive Teardown • Sapphire AMOLED</p>
+            </a>
+            <a href="masterpiece-2.html" class="mobile-mpt-card">
+              <span class="mpt-card-tag">02 // ACOUSTICS</span>
+              <div class="mpt-card-title">Audira — Modern Harmony</div>
+              <p class="mpt-card-sub">196-Frame Planar-Magnetic Studio Headphones</p>
+            </a>
+            <a href="masterpiece-3.html" class="mobile-mpt-card">
+              <span class="mpt-card-tag">03 // SOFT EDITORIAL</span>
+              <div class="mpt-card-title">Mochi — Music, But Make It Cute ✨</div>
+              <p class="mpt-card-sub">Pastel Cloud Cushions • 30h Battery • 5 Dreamy Shades</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Section 2: Smart Watches -->
+        <div class="mobile-nav-group">
+          <div class="mobile-group-title">
+            <span>⌚ SMART WATCHES</span>
+          </div>
+          <div class="mobile-links-grid">
+            <a href="#festive-campaign-section" class="mob-link">All Smartwatches</a>
+            <a href="#categories" class="mob-link">Shop by Category</a>
+            <a href="#top-picks" class="mob-link">Bestsellers & New</a>
+            <a href="#festive-campaign-section" class="mob-link">Halo 2 Limited Edition</a>
+            <a href="#top-picks" class="mob-link">ColorFit Pro 5</a>
+            <a href="#categories" class="mob-link">Noise Junior GPS</a>
+          </div>
+        </div>
+
+        <!-- Section 3: Earbuds & Headphones -->
+        <div class="mobile-nav-group">
+          <div class="mobile-group-title">
+            <span>🎧 EARBUDS & HEADPHONES</span>
+          </div>
+          <div class="mobile-links-grid">
+            <a href="#categories" class="mob-link">Master Buds Open</a>
+            <a href="#top-picks" class="mob-link">ANC True Wireless</a>
+            <a href="#top-picks" class="mob-link">Noise VS102 Plus</a>
+            <a href="masterpiece-2.html" class="mob-link">Audira Studio Series</a>
+            <a href="masterpiece-3.html" class="mob-link">Mochi Pastel Series</a>
+            <a href="#categories" class="mob-link">Sports & Running</a>
+          </div>
+        </div>
+
+        <!-- Section 4: Home Audio & Power -->
+        <div class="mobile-nav-group">
+          <div class="mobile-group-title">
+            <span>🔊 HOME AUDIO & POWER</span>
+          </div>
+          <div class="mobile-links-grid">
+            <a href="#hero-stage-section" class="mob-link">Studio Pro Monitors</a>
+            <a href="#hero-stage-section" class="mob-link">Homestage Dolby Soundbar</a>
+            <a href="#top-picks" class="mob-link">Wireless Fast Chargers</a>
+          </div>
+        </div>
+
+        <!-- Quick Offers -->
+        <div class="mobile-drawer-footer">
+          <a href="#festive-campaign-section" class="mob-footer-btn">🎁 Festive Diwali Offers</a>
+          <a href="#unidays" class="mob-footer-btn">🎓 UNiDAYS 20% Student Discount</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. Global Interactive Search Modal -->
+  <div class="search-modal-overlay" id="search-modal-overlay">
+    <div class="search-modal-card">
+      <div class="search-modal-header">
+        <div class="search-input-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" placeholder="Search products, smartwatches, earbuds, masterpiece..." id="site-search-input" autocomplete="off">
+          <button class="search-clear-btn" id="search-clear-btn" aria-label="Clear Search">&times;</button>
+        </div>
+        <button class="search-modal-close" id="search-modal-close" aria-label="Close Search">Cancel</button>
+      </div>
+
+      <!-- Quick Trending Search Tags -->
+      <div class="search-quick-tags">
+        <span class="tags-label">Trending:</span>
+        <button class="search-tag-pill" data-search="watch">⌚ Watches</button>
+        <button class="search-tag-pill" data-search="earbuds">🎧 Earbuds</button>
+        <button class="search-tag-pill" data-search="core one">👑 Core One</button>
+        <button class="search-tag-pill" data-search="audira">🎵 Audira</button>
+        <button class="search-tag-pill" data-search="mochi">🌸 Mochi</button>
+        <button class="search-tag-pill" data-search="soundbar">🔊 Soundbar</button>
+      </div>
+
+      <!-- Live Search Results List -->
+      <div class="search-results-list" id="search-results-list">
+        <!-- Rendered by app.js -->
       </div>
     </div>
   </div>

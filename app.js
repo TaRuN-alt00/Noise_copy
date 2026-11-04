@@ -628,4 +628,274 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2800);
   }
 
+  // =========================================================================
+  // 11. Mobile Navigation Drawer & Interactive Search
+  // =========================================================================
+  const mobileToggle = document.getElementById('mobile-menu-toggle');
+  const mobileDrawerOverlay = document.getElementById('mobile-drawer-overlay');
+  const mobileDrawerClose = document.getElementById('mobile-drawer-close');
+  const quickOpenDrawerBtn = document.getElementById('btn-quick-open-drawer');
+
+  function openMobileDrawer() {
+    if (mobileDrawerOverlay) {
+      mobileDrawerOverlay.classList.add('active');
+      if (mobileToggle) mobileToggle.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeMobileDrawer() {
+    if (mobileDrawerOverlay) {
+      mobileDrawerOverlay.classList.remove('active');
+      if (mobileToggle) mobileToggle.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+      if (mobileDrawerOverlay && mobileDrawerOverlay.classList.contains('active')) {
+        closeMobileDrawer();
+      } else {
+        openMobileDrawer();
+      }
+    });
+  }
+
+  if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', closeMobileDrawer);
+  if (quickOpenDrawerBtn) quickOpenDrawerBtn.addEventListener('click', openMobileDrawer);
+
+  if (mobileDrawerOverlay) {
+    mobileDrawerOverlay.addEventListener('click', (e) => {
+      if (e.target === mobileDrawerOverlay) closeMobileDrawer();
+    });
+  }
+
+  // Close mobile drawer when clicking internal links
+  const drawerLinks = document.querySelectorAll('.mobile-nav-drawer a');
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMobileDrawer();
+    });
+  });
+
+  // =========================================================================
+  // 12. Global Interactive Search Modal with Real-Time Filtering
+  // =========================================================================
+  const searchModalOverlay = document.getElementById('search-modal-overlay');
+  const openSearchBtn = document.getElementById('open-search-btn');
+  const searchModalClose = document.getElementById('search-modal-close');
+  const siteSearchInput = document.getElementById('site-search-input');
+  const drawerSearchInput = document.getElementById('drawer-search-input');
+  const searchClearBtn = document.getElementById('search-clear-btn');
+  const searchResultsList = document.getElementById('search-results-list');
+  const searchTagPills = document.querySelectorAll('.search-tag-pill');
+
+  const storeCatalog = [
+    {
+      title: 'Noise Core One // 3D Masterpiece',
+      category: 'Masterpiece 01 • Smart Watch',
+      price: '₹7,999',
+      image: 'frames/frame_0001.webp',
+      url: 'masterpiece.html'
+    },
+    {
+      title: 'Audira — Modern Harmony',
+      category: 'Masterpiece 02 • Flagship Headphones',
+      price: '₹7,999',
+      image: 'hp-assets/headphone-pulse.webp',
+      url: 'masterpiece-2.html'
+    },
+    {
+      title: 'Mochi — Music, But Make It Cute ✨',
+      category: 'Masterpiece 03 • Soft Editorial Pastel',
+      price: '₹6,499',
+      image: 'assets/mochi/mochi-still.jpg',
+      url: 'masterpiece-3.html'
+    },
+    {
+      title: 'Halo Luxe Pro Skeleton Edition',
+      category: 'Flagship Timepiece • Smart Watch',
+      price: '₹6,999',
+      image: 'assets/hero_luxury_skeleton_watch.jpg',
+      url: '#top-picks'
+    },
+    {
+      title: 'Studio Pro Monitors Acoustic Duo',
+      category: 'Home Audio • Studio Sound',
+      price: '₹8,999',
+      image: 'assets/hero_studio_monitors.jpg',
+      url: '#categories'
+    },
+    {
+      title: 'Homestage Dolby Atmos Soundbar',
+      category: 'Home Audio • Cinematic Surround',
+      price: '₹14,999',
+      image: 'assets/hero_homestage.jpg',
+      url: '#categories'
+    },
+    {
+      title: 'ColorFit Pro 5 Max',
+      category: 'Smart Watch • 1.96" AMOLED',
+      price: '₹3,999',
+      image: 'assets/smartwatch_zoom.jpg',
+      url: '#top-picks'
+    },
+    {
+      title: 'Master Buds Open (Sound by Bose)',
+      category: 'Wireless Earbuds • Open Audio',
+      price: '₹5,999',
+      image: 'assets/person_wearing.jpg',
+      url: '#top-picks'
+    },
+    {
+      title: 'Noise Junior 4G GPS Smartwatch',
+      category: 'Kids Wearables • Video Calling',
+      price: '₹2,999',
+      image: 'assets/noise_junior.jpg',
+      url: '#categories'
+    },
+    {
+      title: 'Noise Buds VS102 Plus',
+      category: 'True Wireless Earbuds • 70h Playtime',
+      price: '₹1,299',
+      image: 'assets/noise_vs102_plum_earbuds_zoom.jpg',
+      url: '#festive-campaign-section'
+    },
+    {
+      title: 'Halo 2 Limited Edition Watch',
+      category: 'Smart Watch • Metallic Bezel',
+      price: '₹4,499',
+      image: 'assets/luxury_bronze_watch_zoom.jpg',
+      url: '#festive-campaign-section'
+    },
+    {
+      title: 'Diva Araya Diamond Dial',
+      category: 'Women Smart Watch • Jewel Cut',
+      price: '₹3,499',
+      image: 'assets/watches/diva_series.jpg',
+      url: '#festive-campaign-section'
+    }
+  ];
+
+  function renderSearchResults(query = '') {
+    if (!searchResultsList) return;
+    const q = query.trim().toLowerCase();
+    const filtered = q
+      ? storeCatalog.filter(item =>
+          item.title.toLowerCase().includes(q) ||
+          item.category.toLowerCase().includes(q)
+        )
+      : storeCatalog.slice(0, 6);
+
+    if (filtered.length === 0) {
+      searchResultsList.innerHTML = `
+        <div style="text-align: center; padding: 32px 16px; color: #71717a;">
+          <p style="font-size: 1.1rem; margin-bottom: 6px;">No products found for "${query}"</p>
+          <small>Try searching for "Watch", "Earbuds", "Audira", or "Mochi"</small>
+        </div>
+      `;
+      return;
+    }
+
+    searchResultsList.innerHTML = filtered.map(item => `
+      <a href="${item.url}" class="search-result-item">
+        <img src="${item.image}" alt="${item.title}" class="search-item-thumb">
+        <div class="search-item-info">
+          <div class="search-item-title">${item.title}</div>
+          <div class="search-item-cat">${item.category}</div>
+        </div>
+        <div class="search-item-price">${item.price}</div>
+      </a>
+    `).join('');
+  }
+
+  function openSearchModal(initialQuery = '') {
+    if (!searchModalOverlay) return;
+    searchModalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (siteSearchInput) {
+      siteSearchInput.value = initialQuery;
+      if (searchClearBtn) searchClearBtn.classList.toggle('active', initialQuery.length > 0);
+      renderSearchResults(initialQuery);
+      setTimeout(() => siteSearchInput.focus(), 100);
+    }
+  }
+
+  function closeSearchModal() {
+    if (!searchModalOverlay) return;
+    searchModalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (openSearchBtn) {
+    openSearchBtn.addEventListener('click', () => openSearchModal());
+  }
+
+  if (searchModalClose) {
+    searchModalClose.addEventListener('click', closeSearchModal);
+  }
+
+  if (searchModalOverlay) {
+    searchModalOverlay.addEventListener('click', (e) => {
+      if (e.target === searchModalOverlay) closeSearchModal();
+    });
+  }
+
+  if (siteSearchInput) {
+    siteSearchInput.addEventListener('input', (e) => {
+      const val = e.target.value;
+      if (searchClearBtn) searchClearBtn.classList.toggle('active', val.length > 0);
+      renderSearchResults(val);
+    });
+  }
+
+  if (searchClearBtn) {
+    searchClearBtn.addEventListener('click', () => {
+      if (siteSearchInput) {
+        siteSearchInput.value = '';
+        searchClearBtn.classList.remove('active');
+        siteSearchInput.focus();
+        renderSearchResults('');
+      }
+    });
+  }
+
+  // Drawer search input triggers search modal
+  if (drawerSearchInput) {
+    drawerSearchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const query = drawerSearchInput.value;
+        closeMobileDrawer();
+        openSearchModal(query);
+      }
+    });
+    drawerSearchInput.addEventListener('focus', () => {
+      const query = drawerSearchInput.value;
+      closeMobileDrawer();
+      openSearchModal(query);
+    });
+  }
+
+  // Tag pills click in search modal
+  searchTagPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const tag = pill.getAttribute('data-search') || '';
+      if (siteSearchInput) {
+        siteSearchInput.value = tag;
+        if (searchClearBtn) searchClearBtn.classList.add('active');
+        renderSearchResults(tag);
+        siteSearchInput.focus();
+      }
+    });
+  });
+
+  // Close search modal when Escape is pressed
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeSearchModal();
+      closeMobileDrawer();
+    }
+  });
+
 });
